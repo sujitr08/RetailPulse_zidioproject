@@ -1,0 +1,32 @@
+RetailPulse Optuna Churn Tuning Report
+======================================
+Trials: 30
+Best trial: 23
+Training rows: 8,636
+Validation customers: 4,313
+Training churn: 63.374%
+Validation churn: 49.293%
+
+Validation metrics:
+- rocAuc: 0.7695
+- averagePrecision: 0.7206
+- precisionAtTop20Percent: 0.7555
+- precisionAtThreshold05: 0.6059
+- recallAtThreshold05: 0.9309
+- f1AtThreshold05: 0.7341
+
+Best parameters:
+- n_estimators: 200
+- max_depth: 3
+- learning_rate: 0.011503459624006462
+- min_child_weight: 2.3631964208370277
+- subsample: 0.7923280266837512
+- colsample_bytree: 0.6608056324402116
+- gamma: 4.775085609664102
+- reg_alpha: 0.1505603606788313
+- reg_lambda: 0.009506056390450855
+
+Caveats:
+- Only one latest temporal validation snapshot is used.
+- Customers may appear in multiple earlier training snapshots.
+- Compare measured ROC-AUC with the >=0.88 target; do not assume it is met.

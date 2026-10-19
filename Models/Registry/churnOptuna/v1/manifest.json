@@ -1,0 +1,22 @@
+{
+  "modelName": "churnOptuna",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.818279+00:00",
+  "artifacts": [
+    {
+      "file": "churnXgboostOptuna.json",
+      "source": "models\\churnXgboostOptuna.json",
+      "sha256": "4285e0d2d2627acecf26561ac0e33308eb5981a83f201b07d188482086f1bf31",
+      "sizeBytes": 223247,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnOptunaTuningReport.txt",
+      "source": "reports\\modelReports\\churnOptunaTuningReport.txt",
+      "sha256": "0b7d6aa5225a8e99f0b25ebde1c0c0d5ed1a1b77e25e96f032ebc6a17e5dcc69",
+      "sizeBytes": 923,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}
