@@ -1,0 +1,32 @@
+=== DUPLICATE INVESTIGATION ===
+Total rows: 1,067,371
+Within Year 2009-2010: 6,865
+Within Year 2010-2011: 5,268
+Within-sheet duplicates combined: 12,133
+Combined duplicates: 34,335
+Difference to investigate: 22,202
+
+=== CROSS-SHEET OVERLAP ===
+Signatures appearing in multiple sheets: 22,202
+Rows belonging to those signatures: 45,046
+Excess occurrences for cross-sheet signatures: 22,844
+
+Sample cross-sheet duplicate signatures:
+invoice stockCode                         description  quantity         invoiceDate  unitPrice  customerId        country  sourceSheetCount  totalOccurrences  sheetOccurrences
+ 536365     21730   GLASS STAR FROSTED T-LIGHT HOLDER         6 2010-12-01 08:26:00       4.25     17850.0 United Kingdom                 2                 2                 2
+ 536365     22752        SET 7 BABUSHKA NESTING BOXES         2 2010-12-01 08:26:00       7.65     17850.0 United Kingdom                 2                 2                 2
+ 536365     71053                 WHITE METAL LANTERN         6 2010-12-01 08:26:00       3.39     17850.0 United Kingdom                 2                 2                 2
+ 536365    84029E      RED WOOLLY HOTTIE WHITE HEART.         6 2010-12-01 08:26:00       3.39     17850.0 United Kingdom                 2                 2                 2
+ 536365    84029G KNITTED UNION FLAG HOT WATER BOTTLE         6 2010-12-01 08:26:00       3.39     17850.0 United Kingdom                 2                 2                 2
+ 536365    84406B      CREAM CUPID HEARTS COAT HANGER         8 2010-12-01 08:26:00       2.75     17850.0 United Kingdom                 2                 2                 2
+ 536365    85123A  WHITE HANGING HEART T-LIGHT HOLDER         6 2010-12-01 08:26:00       2.55     17850.0 United Kingdom                 2                 2                 2
+ 536366     22632           HAND WARMER RED POLKA DOT         6 2010-12-01 08:28:00       1.85     17850.0 United Kingdom                 2                 2                 2
+ 536366     22633              HAND WARMER UNION JACK         6 2010-12-01 08:28:00       1.85     17850.0 United Kingdom                 2                 2                 2
+ 536367     21754            HOME BUILDING BLOCK WORD         3 2010-12-01 08:34:00       5.95     13047.0 United Kingdom                 2                 2                 2
+ 536367     21755            LOVE BUILDING BLOCK WORD         3 2010-12-01 08:34:00       5.95     13047.0 United Kingdom                 2                 2                 2
+ 536367     21777         RECIPE BOX WITH METAL HEART         4 2010-12-01 08:34:00       7.95     13047.0 United Kingdom                 2                 2                 2
+ 536367     22310              IVORY KNITTED MUG COSY         6 2010-12-01 08:34:00       1.65     13047.0 United Kingdom                 2                 2                 2
+ 536367     22622      BOX OF VINTAGE ALPHABET BLOCKS         2 2010-12-01 08:34:00       9.95     13047.0 United Kingdom                 2                 2                 2
+ 536367     22623        BOX OF VINTAGE JIGSAW BLOCKS         3 2010-12-01 08:34:00       4.95     13047.0 United Kingdom                 2                 2                 2
+
+No files were modified.

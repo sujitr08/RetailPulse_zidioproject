@@ -1,0 +1,359 @@
+"""
+New field	Implementation
+ProductID	: Stable ID mapped from StockCode
+ProductCategory	: Transparent rule-based category, with Uncategorized when the rules cannot confidently classify a product
+UnitCost	: Missing until reliable cost data is available; never presented as actual cost without evidence
+StockQuantity	: Missing until genuine stock data is available; simulated stock will be kept separate if we need it for a demonstration
+SalesAmount	: Quantity * Price, preserving returns and cancellationsv
+"""
+from pathlib import Path
+import pandas as pd
+
+# --------------------------------------------------
+# 1. Project paths and configuration
+# --------------------------------------------------
+
+ROOT = Path(__file__).resolve().parents[2]
+
+RAW_FILE = ROOT / "data" / "rawData" / "onlineRetail.xlsx"
+PROCESSED_DIR = ROOT / "data" / "processedData"
+REPORT_DIR = ROOT / "reports" / "modelReports"
+
+PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+REPORT_DIR.mkdir(parents=True, exist_ok=True)
+
+OUTPUT_FILE = PROCESSED_DIR / "cleanedTransactions.csv"
+PRODUCT_MAP_FILE = PROCESSED_DIR / "productIdMap.csv"
+REPORT_FILE = REPORT_DIR / "cleaningReport.txt"
+
+SOURCE_COLUMNS = [
+    "Invoice",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "Price",
+    "Customer ID",
+    "Country",
+]
+
+COLUMN_MAP = {
+    "Invoice": "invoice",
+    "StockCode": "stockCode",
+    "Description": "description",
+    "Quantity": "quantity",
+    "InvoiceDate": "invoiceDate",
+    "Price": "unitPrice",
+    "Customer ID": "customerId",
+    "Country": "country",
+}
+
+
+# --------------------------------------------------
+# 2. Transparent, rule-based product categorization
+# --------------------------------------------------
+
+def categorizeProduct(description):
+    """Assign a broad category using documented keywords.
+
+    These are heuristic categories, not official source categories.
+    Uncertain products remain Uncategorized.
+    """
+    if pd.isna(description) or not str(description).strip():
+        return "Uncategorized"
+
+    text = str(description).upper()
+
+    categoryRules = [
+        (
+            "Lighting",
+            ["LIGHT", "LANTERN", "LAMP", "CANDLE", "T-LIGHT"],
+        ),
+        (
+            "HomeDecor",
+            [
+                "HOLDER", "FRAME", "VASE", "ORNAMENT", "GARLAND",
+                "WALL", "DECORATION", "DOORMAT", "DOOR MAT",
+            ],
+        ),
+        (
+            "KitchenAndDining",
+            [
+                "MUG", "CUP", "PLATE", "BOWL", "CUTLERY",
+                "NAPKIN", "TEA", "KITCHEN", "TRINKET BOX",
+            ],
+        ),
+        (
+            "ToysAndGames",
+            [
+                "TOY", "GAME", "JIGSAW", "PUZZLE", "PLAYING CARDS",
+                "CHESS", "DOMINO",
+            ],
+        ),
+        (
+            "Accessories",
+            [
+                "BRACELET", "NECKLACE", "RING", "EARRING",
+                "HAIRCLIP", "HAIR SLIDE", "HAIR COMB",
+            ],
+        ),
+        (
+            "StationeryAndGifts",
+            [
+                "CARD", "PAPER", "PENCIL", "NOTEBOOK", "GIFT",
+                "RIBBON", "WRAP", "WRAPPING", "STICKER",
+            ],
+        ),
+        (
+            "Textiles",
+            [
+                "CUSHION", "BLANKET", "TOWEL", "FABRIC",
+                "COTTON", "WOOL", "APRON", "BUNTING",
+            ],
+        ),
+        (
+            "GardenAndOutdoor",
+            [
+                "GARDEN", "PLANTER", "FLOWER", "BIRD",
+                "OUTDOOR", "POTTING",
+            ],
+        ),
+    ]
+
+    for category, keywords in categoryRules:
+        if any(keyword in text for keyword in keywords):
+            return category
+
+    return "Uncategorized"
+
+
+# --------------------------------------------------
+# 3. Load and validate the original workbook
+# --------------------------------------------------
+
+if not RAW_FILE.exists():
+    raise FileNotFoundError(
+        f"Raw dataset not found: {RAW_FILE}"
+    )
+
+sheets = pd.read_excel(
+    RAW_FILE,
+    sheet_name=None,
+    engine="openpyxl",
+)
+
+frames = []
+
+for sheetName, sheetData in sheets.items():
+    missingColumns = set(SOURCE_COLUMNS) - set(sheetData.columns)
+
+    if missingColumns:
+        raise ValueError(
+            f"Worksheet '{sheetName}' is missing columns: "
+            f"{sorted(missingColumns)}"
+        )
+
+    sheetData = sheetData.copy()
+    sheetData["sourceSheet"] = sheetName
+    frames.append(sheetData)
+
+df = pd.concat(frames, ignore_index=True)
+inputRows = len(df)
+
+# Normalize source column names.
+df = df.rename(columns=COLUMN_MAP)
+
+# Keep sourceSheet as provenance for each transaction.
+df["sourceSheet"] = df["sourceSheet"].astype("string")
+
+
+# --------------------------------------------------
+# 4. Standardize data types and text fields
+# --------------------------------------------------
+
+for column in ["invoice", "stockCode", "description", "country"]:
+    df[column] = df[column].astype("string").str.strip()
+
+df["description"] = df["description"].replace("", pd.NA)
+df["customerId"] = pd.to_numeric(
+    df["customerId"], errors="coerce"
+).astype("Int64")
+
+df["quantity"] = pd.to_numeric(
+    df["quantity"], errors="coerce"
+)
+df["unitPrice"] = pd.to_numeric(
+    df["unitPrice"], errors="coerce"
+)
+df["invoiceDate"] = pd.to_datetime(
+    df["invoiceDate"], errors="coerce"
+)
+
+# Required identifiers and numeric transaction fields must be valid.
+if df["invoice"].isna().any():
+    raise ValueError("Invoice contains missing identifiers.")
+
+if df["stockCode"].isna().any():
+    raise ValueError("StockCode contains missing identifiers.")
+
+if df["quantity"].isna().any():
+    raise ValueError("Quantity contains invalid or missing values.")
+
+if df["unitPrice"].isna().any():
+    raise ValueError("Price contains invalid or missing values.")
+
+
+# --------------------------------------------------
+# 5. Create stable product identifiers
+# --------------------------------------------------
+
+# Sorting unique stock codes makes IDs reproducible for the same
+# product catalogue, independent of transaction row order.
+stockCodes = sorted(df["stockCode"].dropna().unique().tolist())
+
+productIdMap = pd.DataFrame({
+    "stockCode": stockCodes,
+    "ProductID": [
+        f"PROD{number:05d}"
+        for number in range(1, len(stockCodes) + 1)
+    ],
+})
+
+mapping = dict(
+    zip(productIdMap["stockCode"], productIdMap["ProductID"])
+)
+
+df["ProductID"] = df["stockCode"].map(mapping)
+
+if df["ProductID"].isna().any():
+    raise ValueError("Some stock codes did not receive a ProductID.")
+
+productIdMap.to_csv(PRODUCT_MAP_FILE, index=False)
+
+
+# --------------------------------------------------
+# 6. Add requested business fields
+# --------------------------------------------------
+
+df["ProductCategory"] = df["description"].map(categorizeProduct)
+
+# The source workbook has no verified product cost or stock-on-hand.
+# Keep these explicitly unavailable instead of inventing real values.
+df["UnitCost"] = pd.Series(
+    pd.NA, index=df.index, dtype="Float64"
+)
+df["StockQuantity"] = pd.Series(
+    pd.NA, index=df.index, dtype="Int64"
+)
+
+# Preserve negative amounts for returns and cancellations.
+df["SalesAmount"] = df["quantity"] * df["unitPrice"]
+
+
+# --------------------------------------------------
+# 7. Add data-quality and transaction flags
+# --------------------------------------------------
+
+# Marks each repeated occurrence after its first identical source row.
+# All records are retained.
+duplicateColumns = SOURCE_COLUMNS
+duplicateColumns = list(COLUMN_MAP.values())
+df["isExactDuplicate"] = df.duplicated(
+    subset=duplicateColumns,
+    keep="first"
+)
+df["hasMissingCustomerId"] = df["customerId"].isna()
+df["hasMissingDescription"] = df["description"].isna()
+df["hasInvalidDate"] = df["invoiceDate"].isna()
+df["hasNonPositiveQuantity"] = df["quantity"].le(0)
+df["hasNonPositivePrice"] = df["unitPrice"].le(0)
+
+df["isCancellationInvoice"] = (
+    df["invoice"].str.upper().str.startswith("C", na=False)
+)
+
+df["isCandidateSale"] = (
+    df["quantity"].gt(0)
+    & df["unitPrice"].gt(0)
+    & df["invoiceDate"].notna()
+    & ~df["isCancellationInvoice"]
+)
+
+# This is a proposed sales filter, not a final modelling decision.
+
+
+# --------------------------------------------------
+# 8. Validate the new fields and save the dataset
+# --------------------------------------------------
+
+requiredNewFields = [
+    "ProductID",
+    "ProductCategory",
+    "UnitCost",
+    "StockQuantity",
+    "SalesAmount",
+]
+
+missingNewFields = set(requiredNewFields) - set(df.columns)
+
+if missingNewFields:
+    raise ValueError(
+        f"Required new fields missing: {sorted(missingNewFields)}"
+    )
+
+if len(df) != inputRows:
+    raise ValueError(
+        f"Row count changed unexpectedly: {inputRows} -> {len(df)}"
+    )
+
+# Save the complete transaction-level dataset; no rows are dropped.
+df.to_csv(OUTPUT_FILE, index=False)
+
+# Verify the saved file can be read and has the expected schema.
+savedHeader = pd.read_csv(OUTPUT_FILE, nrows=0).columns.tolist()
+
+if savedHeader != df.columns.tolist():
+    raise ValueError("Saved CSV schema does not match the in-memory data.")
+
+# --------------------------------------------------
+# 9. Generate a reproducible processing report
+# --------------------------------------------------
+
+reportLines = [
+    "RETAILPULSE — CLEANING AND FEATURE REPORT",
+    "=" * 60,
+    f"Input rows: {inputRows:,}",
+    f"Output rows: {len(df):,}",
+    f"Rows removed: {inputRows - len(df):,}",
+    f"Output columns: {len(df.columns)}",
+    f"Distinct products: {df['stockCode'].nunique():,}",
+    f"Unique ProductIDs: {df['ProductID'].nunique():,}",
+    f"Missing customer IDs: {int(df['hasMissingCustomerId'].sum()):,}",
+    f"Missing descriptions: {int(df['hasMissingDescription'].sum()):,}",
+    f"Exact duplicate occurrences flagged: {int(df['isExactDuplicate'].sum()):,}",
+    f"Non-positive quantities: {int(df['hasNonPositiveQuantity'].sum()):,}",
+    f"Non-positive prices: {int(df['hasNonPositivePrice'].sum()):,}",
+    f"Cancellation invoice rows: {int(df['isCancellationInvoice'].sum()):,}",
+    f"Candidate sale rows: {int(df['isCandidateSale'].sum()):,}",
+    f"Uncategorized products' transaction rows: {int(df['ProductCategory'].eq('Uncategorized').sum()):,}",
+    f"UnitCost populated rows: {int(df['UnitCost'].notna().sum()):,}",
+    f"StockQuantity populated rows: {int(df['StockQuantity'].notna().sum()):,}",
+    f"Total SalesAmount (all rows): {df['SalesAmount'].sum():,.2f}",
+    f"Source file: {RAW_FILE}",
+    f"Cleaned dataset: {OUTPUT_FILE}",
+    f"Product ID mapping: {PRODUCT_MAP_FILE}",
+    "",
+    "Important notes:",
+    "- No transaction rows were deleted.",
+    "- UnitCost and StockQuantity are missing because source data is unavailable.",
+    "- ProductCategory is heuristic and should be reviewed.",
+    "- Candidate sales are not yet the final forecasting dataset.",
+]
+
+REPORT_FILE.write_text(
+    "\n".join(reportLines),
+    encoding="utf-8",
+)
+
+print("\n".join(reportLines))
+print("\nCleaning pipeline completed.")
