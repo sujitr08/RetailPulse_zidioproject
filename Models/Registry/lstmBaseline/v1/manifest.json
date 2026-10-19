@@ -1,0 +1,29 @@
+{
+  "modelName": "lstmBaseline",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.715274+00:00",
+  "artifacts": [
+    {
+      "file": "lstmBaselineModel.pt",
+      "source": "reports\\modelReports\\lstmBaselineModel.pt",
+      "sha256": "48622a768c8039fbd301fa84d006660d263277d9388d38e752a05c963ccd591d",
+      "sizeBytes": 21197,
+      "verifiedCopy": true
+    },
+    {
+      "file": "lstmBaselineMetrics.json",
+      "source": "reports\\modelReports\\lstmBaselineMetrics.json",
+      "sha256": "412577005132757c0fda208f0c6483a36ac139d4b8228b34e6ee31a485064b53",
+      "sizeBytes": 547,
+      "verifiedCopy": true
+    },
+    {
+      "file": "lstmBaselineReport.txt",
+      "source": "reports\\modelReports\\lstmBaselineReport.txt",
+      "sha256": "497af4e651cf2f40356eca49f2c8ad9d2d2406d3fed9c63e4d357e557e3bf161",
+      "sizeBytes": 1329,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}
