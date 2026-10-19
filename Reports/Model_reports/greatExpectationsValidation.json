@@ -1,0 +1,333 @@
+{
+  "project": "retailPulse",
+  "great_expectations_version": "1.24.0",
+  "dataset": "C:\\Users\\sidha\\OneDrive\\Desktop\\retailPulse\\data\\processedData\\cleanedTransactions.csv",
+  "checks_total": 36,
+  "checks_passed": 36,
+  "checks_failed": 0,
+  "overall_success": true,
+  "checks": [
+    {
+      "name": "column_exists::invoice",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::stockCode",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::description",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::quantity",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::invoiceDate",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::unitPrice",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::customerId",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::country",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::sourceSheet",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::ProductID",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::ProductCategory",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::UnitCost",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::StockQuantity",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::SalesAmount",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::isWithinSheetDuplicate",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::isCrossSheetDuplicate",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::isExactDuplicate",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::hasMissingCustomerId",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::hasMissingDescription",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::hasInvalidDate",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::hasNonPositiveQuantity",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::hasNonPositivePrice",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::isCancellationInvoice",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "column_exists::isCandidateSale",
+      "success": true,
+      "result": {},
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "not_null::invoice",
+      "success": true,
+      "result": {
+        "element_count": 1067371,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "not_null::stockCode",
+      "success": true,
+      "result": {
+        "element_count": 1067371,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "not_null::invoiceDate",
+      "success": true,
+      "result": {
+        "element_count": 1067371,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "not_null::ProductID",
+      "success": true,
+      "result": {
+        "element_count": 1067371,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "not_null::SalesAmount",
+      "success": true,
+      "result": {
+        "element_count": 1067371,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "error": null,
+      "validator": "Great Expectations"
+    },
+    {
+      "name": "duplicate_flag_consistency",
+      "success": true,
+      "result": {
+        "mismatch_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "no_missing_ProductID",
+      "success": true,
+      "result": {
+        "missing_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "no_missing_SalesAmount",
+      "success": true,
+      "result": {
+        "missing_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "valid_invoice_dates",
+      "success": true,
+      "result": {
+        "invalid_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "numeric_values::quantity",
+      "success": true,
+      "result": {
+        "invalid_or_missing_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "numeric_values::unitPrice",
+      "success": true,
+      "result": {
+        "invalid_or_missing_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    },
+    {
+      "name": "numeric_values::SalesAmount",
+      "success": true,
+      "result": {
+        "invalid_or_missing_rows": 0
+      },
+      "error": null,
+      "validator": "Explicit data-integrity check"
+    }
+  ],
+  "diagnostics": {
+    "row_count": 1067371,
+    "column_count": 24,
+    "missing_customerId_rows": 243007,
+    "missing_description_rows": 4382,
+    "non_positive_quantity_rows": 22950,
+    "non_positive_unitPrice_rows": 6207,
+    "within_sheet_duplicate_rows": 12133,
+    "cross_sheet_duplicate_rows": 22523,
+    "combined_duplicate_rows": 34335,
+    "unitCost_populated_rows": 0,
+    "stockQuantity_populated_rows": 0,
+    "candidate_sale_rows": 1041670
+  },
+  "interpretation": {
+    "missing_customerId": "Known source-data limitation; reported, not fatal.",
+    "missing_description": "Known source-data limitation; reported, not fatal.",
+    "non_positive_quantity_or_price": "Reported because returns, cancellations and adjustments exist.",
+    "UnitCost_and_StockQuantity": "Expected missing until verified source values are available.",
+    "duplicates": "Flagged and reported; validation deletes no transaction rows."
+  }
+}

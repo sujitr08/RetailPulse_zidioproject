@@ -1,0 +1,42 @@
+{
+  "model": "XGBoostClassifier",
+  "label_definition": "No qualifying purchase during the 90 days after cutoff",
+  "feature_window_days": 365,
+  "label_window_days": 90,
+  "observation_cutoff": "2011-09-10",
+  "label_window_end": "2011-12-09",
+  "customers_total": 4317,
+  "train_customers": 3237,
+  "test_customers": 1080,
+  "churn_rate_all": 0.4936298355339356,
+  "roc_auc": 0.7681777802168401,
+  "average_precision": 0.7331987091980068,
+  "precision_at_top_20_percent": 0.7731481481481481,
+  "precision_at_0_5_threshold": 0.674061433447099,
+  "recall_at_0_5_threshold": 0.7410881801125704,
+  "f1_at_0_5_threshold": 0.7059874888293118,
+  "confusion_matrix_labels_0_1": [
+    [
+      356,
+      191
+    ],
+    [
+      138,
+      395
+    ]
+  ],
+  "feature_columns": [
+    "frequency",
+    "quantityTotal",
+    "monetaryTotal",
+    "averageOrderValue",
+    "averageUnitPrice",
+    "transactionRows",
+    "recencyDays",
+    "uniquePurchaseDays",
+    "averageQuantity",
+    "purchaseSpanDays"
+  ],
+  "note": "Retrospective model. A random stratified split is used for initial baseline only; use a time-based customer validation before production claims. Precision@top20 is calculated on the held-out test set.",
+  "shap_status": "success"
+}

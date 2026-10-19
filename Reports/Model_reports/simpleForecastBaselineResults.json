@@ -1,0 +1,26 @@
+{
+  "holdoutStart": "2011-11-10",
+  "holdoutEnd": "2011-12-09",
+  "holdoutDays": 30,
+  "models": {
+    "seasonalNaive7Day": {
+      "MAE": 14536.330666666665,
+      "RMSE": 28652.56583177732,
+      "MAPE_nonzero_days_percent": 26.232338021667594,
+      "WAPE_percent": 25.74216248879303
+    },
+    "last7DayMean": {
+      "MAE": 24616.817380952383,
+      "RMSE": 38240.09458249268,
+      "MAPE_nonzero_days_percent": 31.511550821191747,
+      "WAPE_percent": 43.59354004174787
+    },
+    "historicalWeekdayMean": {
+      "MAE": 28844.889305202872,
+      "RMSE": 42959.0786840894,
+      "MAPE_nonzero_days_percent": 45.04812173869709,
+      "WAPE_percent": 51.08096702618905
+    }
+  },
+  "note": "Historical diagnostic comparison; same final holdout previously used for model comparison."
+}

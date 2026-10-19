@@ -1,0 +1,34 @@
+RETAILPULSE - LSTM BASELINE EVALUATION
+=======================================================
+Evaluation: final 30 calendar days, excluded from model fitting
+Holdout period: 2011-11-10 to 2011-12-09
+Training rows: 709
+Validation days: 60
+Sequence length: 30
+Hidden units: 32
+Maximum epochs: 100
+Optimizer: Adam
+Loss: mean squared error
+Early stopping: validation loss, patience 10
+Forecast: recursive, 30 steps
+
+METRICS
+-------------------------------------------------------
+MAE: 36949.8181
+RMSE: 48005.3098
+MAPE on non-zero actual days: 51.8325%
+WAPE: 65.4339%
+
+LIMITATIONS
+-------------------------------------------------------
+A single holdout does not establish performance across all seasons.
+Recursive forecast errors may accumulate across the 30-day horizon.
+The historical dataset ends in December 2011.
+The target is eligible positive sales, not net sales after returns.
+
+OUTPUTS
+-------------------------------------------------------
+C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\lstmHoldoutForecast.csv
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\lstmBaselineMetrics.json
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\lstmBaselineModel.pt
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\lstmHoldoutForecast.png

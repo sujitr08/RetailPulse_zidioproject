@@ -1,0 +1,29 @@
+RETAILPULSE - CHURN DUPLICATE-POLICY SENSITIVITY EXPERIMENT
+==================================================================
+Dataset: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\cleanedTransactions.csv
+Cutoffs: 2011-03-14, 2011-06-12, 2011-09-10
+Feature window: 365 days
+Label window: 90 days
+
+COMPARISON
+                          experiment  train_snapshot_rows  test_customers  train_churn_rate  test_churn_rate  roc_auc  target_roc_auc  precision_at_top_20_percent  target_precision_at_top_20_percent  average_precision  precision_at_0_5_threshold  recall_at_0_5_threshold  f1_at_0_5_threshold
+        baseline_all_qualifying_rows                 8636            4313            0.6337           0.4929   0.7633          0.8800                       0.7381                              0.7500             0.7099                      0.6579                   0.7977               0.7211
+exclude_cross_sheet_duplicate_copies                 8636            4313            0.6337           0.4929   0.7636          0.8800                       0.7335                              0.7500             0.7099                      0.6572                   0.8024               0.7226
+
+INTERPRETATION
+- Baseline retains all qualifying rows.
+- Filtered experiment excludes only isCrossSheetDuplicate=True rows.
+- Within-sheet duplicate rows remain in both experiments.
+- Compare both models on the same final temporal cutoff.
+- This experiment does not prove which duplicate policy is definitively correct.
+
+CAVEATS
+- This is a sensitivity experiment, not proof that all flagged copies are invalid.
+- Only one final temporal test cutoff is evaluated.
+- Customers may recur across point-in-time snapshots.
+- Historical data ends in 2011 and may not generalize to current retail behavior.
+- Acceptance thresholds are goals, not guaranteed outcomes.
+
+Metrics JSON: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\churnDuplicatePolicyComparison.json
+Comparison CSV: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\churnDuplicatePolicyComparison.csv
+Predictions CSV: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\churnDuplicatePolicyPredictions.csv

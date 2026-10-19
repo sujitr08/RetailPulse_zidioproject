@@ -1,0 +1,33 @@
+RETAILPULSE - CLEANING AND FEATURE REPORT
+============================================================
+Input rows: 1,067,371
+Output rows: 1,067,371
+Rows removed: 0
+Output columns: 24
+Distinct products: 5,304
+Unique ProductIDs: 5,304
+Missing customer IDs: 243,007
+Missing descriptions: 4,382
+Invalid dates: 0
+Within-sheet duplicate rows flagged: 12,133
+Cross-sheet duplicate rows flagged (older-sheet copies): 22,523
+Rows flagged by either duplicate rule: 34,335
+Non-positive quantities: 22,950
+Non-positive prices: 6,207
+Cancellation invoice rows: 19,494
+Candidate sale rows: 1,041,670
+Uncategorized product transaction rows: 566,838
+UnitCost populated rows: 0
+StockQuantity populated rows: 0
+Total SalesAmount (all rows): 19,287,250.57
+Source file: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\rawData\onlineRetail.xlsx
+Cleaned dataset: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\cleanedTransactions.csv
+Product ID mapping: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\productIdMap.csv
+
+Important notes:
+- No transaction rows were deleted.
+- Cross-sheet duplicates are flagged, not removed, pending validation.
+- Within-sheet duplicate rows are flagged separately.
+- UnitCost and StockQuantity are unavailable in the source data.
+- ProductCategory is heuristic and should be reviewed.
+- Candidate sales are a modelling filter, not the final modelling decision.

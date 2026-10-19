@@ -1,0 +1,48 @@
+{
+  "studyName": "retailPulseChurnTemporalTuning",
+  "trials": 30,
+  "objective": "maximize temporal validation ROC-AUC",
+  "bestTrial": 23,
+  "bestParameters": {
+    "n_estimators": 200,
+    "max_depth": 3,
+    "learning_rate": 0.011503459624006462,
+    "min_child_weight": 2.3631964208370277,
+    "subsample": 0.7923280266837512,
+    "colsample_bytree": 0.6608056324402116,
+    "gamma": 4.775085609664102,
+    "reg_alpha": 0.1505603606788313,
+    "reg_lambda": 0.009506056390450855
+  },
+  "validationMetrics": {
+    "rocAuc": 0.7695302267181295,
+    "averagePrecision": 0.7206056014736385,
+    "precisionAtTop20Percent": 0.7555040556199305,
+    "precisionAtThreshold05": 0.6059399877526026,
+    "recallAtThreshold05": 0.9308560677328316,
+    "f1AtThreshold05": 0.7340504451038575
+  },
+  "features": [
+    "recencyDays",
+    "frequency",
+    "uniquePurchaseDays",
+    "monetaryTotal",
+    "averageOrderValue",
+    "quantityTotal",
+    "transactionRows"
+  ],
+  "trainingSnapshotCutoffs": [
+    "2011-03-14",
+    "2011-06-12"
+  ],
+  "validationCutoff": "2011-09-10",
+  "trainingRows": 8636,
+  "validationCustomers": 4313,
+  "trainingChurnRate": 0.6337424733672997,
+  "validationChurnRate": 0.4929283561326223,
+  "limitations": [
+    "Only one latest temporal validation snapshot is used.",
+    "Customers may appear in multiple earlier training snapshots.",
+    "Compare measured ROC-AUC with the >=0.88 target; do not assume it is met."
+  ]
+}

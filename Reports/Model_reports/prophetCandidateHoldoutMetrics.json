@@ -1,0 +1,23 @@
+{
+  "holdoutStart": "2011-11-10",
+  "holdoutEnd": "2011-12-09",
+  "holdoutDays": 30,
+  "baseline": {
+    "MAE": 20906.799337716842,
+    "RMSE": 35770.989813506945,
+    "MAPE_nonzero_days_percent": 27.500285647689203,
+    "WAPE_percent": 37.023526639099856
+  },
+  "candidate": {
+    "MAE": 22591.59234595976,
+    "RMSE": 33380.01161584016,
+    "MAPE_nonzero_days_percent": 37.53629469478289,
+    "WAPE_percent": 40.00710044274373
+  },
+  "candidateConfig": {
+    "yearly_seasonality": true,
+    "weekly_seasonality": true,
+    "seasonality_mode": "multiplicative",
+    "changepoint_prior_scale": 0.05
+  }
+}

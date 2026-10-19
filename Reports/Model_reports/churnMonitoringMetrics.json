@@ -1,0 +1,13 @@
+{
+  "status": "HISTORICAL_TEMPORAL_HOLDOUT_REASSESSMENT",
+  "source_file": "reports\\modelReports\\churnTemporalRiskPredictions.csv",
+  "observations": 4313,
+  "observed_churn_rate_percent": 49.292835613262234,
+  "mean_predicted_churn_probability_percent": 54.39553329815673,
+  "roc_auc": 0.7632644752344415,
+  "average_precision": 0.7099127775815992,
+  "precision_at_0_5": 0.6578743211792087,
+  "recall_at_0_5": 0.7977422389463782,
+  "f1_at_0_5": 0.7210884353741497,
+  "note": "Reassessment of the existing labeled temporal holdout, not a new independent test."
+}

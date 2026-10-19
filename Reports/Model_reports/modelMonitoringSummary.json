@@ -1,0 +1,200 @@
+{
+  "project": "RetailPulse",
+  "generated_at_utc": "2026-10-19T07:02:03.256006+00:00",
+  "assessment_type": "Historical offline monitoring; not live production monitoring",
+  "overall_status": "COMPLETED_WITH_CAVEATS",
+  "statuses": {
+    "forecast_metrics": "PASS",
+    "churn_metrics": "PASS",
+    "sales_data_drift": "REPORT_CREATED",
+    "churn_score_distribution": "REPORT_CREATED"
+  },
+  "forecast_summary": {
+    "models_evaluated": 3,
+    "best_by_wape_on_existing_holdout": "Prophet"
+  },
+  "forecast_metrics": [
+    {
+      "observations": 30,
+      "mae": 20906.799337716842,
+      "rmse": 35770.989813506945,
+      "mape_nonzero_actual_percent": 27.500285647689203,
+      "wape_percent": 37.023526639099856,
+      "mean_error_forecast_minus_actual": -16678.960281089134,
+      "status": "PASS",
+      "model": "Prophet",
+      "source_file": "data\\processedData\\prophetHoldoutForecast.csv",
+      "date_start": "2011-11-10",
+      "date_end": "2011-12-09"
+    },
+    {
+      "observations": 30,
+      "mae": 36949.81825246734,
+      "rmse": 48005.31054138705,
+      "mape_nonzero_actual_percent": 51.832540259975936,
+      "wape_percent": 65.43385997454733,
+      "mean_error_forecast_minus_actual": -29036.160160785614,
+      "status": "PASS",
+      "model": "LSTM",
+      "source_file": "data\\processedData\\lstmHoldoutForecast.csv",
+      "date_start": "2011-11-10",
+      "date_end": "2011-12-09"
+    },
+    {
+      "observations": 30,
+      "mae": 28902.860391661892,
+      "rmse": 41373.56143338266,
+      "mape_nonzero_actual_percent": 39.60900235757574,
+      "wape_percent": 51.18362712394687,
+      "mean_error_forecast_minus_actual": -22857.560220937376,
+      "status": "PASS",
+      "model": "Equal-weight ensemble",
+      "source_file": "data\\processedData\\ensembleHoldoutForecast.csv",
+      "date_start": "2011-11-10",
+      "date_end": "2011-12-09"
+    }
+  ],
+  "churn_metrics": {
+    "status": "HISTORICAL_TEMPORAL_HOLDOUT_REASSESSMENT",
+    "source_file": "reports\\modelReports\\churnTemporalRiskPredictions.csv",
+    "observations": 4313,
+    "observed_churn_rate_percent": 49.292835613262234,
+    "mean_predicted_churn_probability_percent": 54.39553329815673,
+    "roc_auc": 0.7632644752344415,
+    "average_precision": 0.7099127775815992,
+    "precision_at_0_5": 0.6578743211792087,
+    "recall_at_0_5": 0.7977422389463782,
+    "f1_at_0_5": 0.7210884353741497,
+    "note": "Reassessment of the existing labeled temporal holdout, not a new independent test."
+  },
+  "sales_data_drift": {
+    "status": "REPORT_CREATED",
+    "reference_rows": 517,
+    "current_rows": 222,
+    "html_report": "reports\\modelReports\\salesDataDriftReport.html",
+    "evidently_result": {
+      "metrics": [
+        {
+          "id": "15e89f895b482f9b84ba7274ed18a106",
+          "metric_name": "DriftedColumnsCount(drift_share=0.5)",
+          "config": {
+            "type": "evidently:metric_v2:DriftedColumnsCount",
+            "drift_share": 0.5
+          },
+          "value": {
+            "count": 1.0,
+            "share": 1.0
+          }
+        },
+        {
+          "id": "d2a8f30809143e735de1e9c7cd62fffc",
+          "metric_name": "ValueDrift(column=dailySales,method=K-S p_value,threshold=0.05)",
+          "config": {
+            "type": "evidently:metric_v2:ValueDrift",
+            "column": "dailySales",
+            "method": "K-S p_value",
+            "threshold": 0.05
+          },
+          "value": 9.198611740762551e-06
+        }
+      ],
+      "tests": []
+    },
+    "distribution_metrics": {
+      "status": "DRIFT_SIGNAL",
+      "reference_valid_rows": 517,
+      "current_valid_rows": 222,
+      "reference_mean": 26319.257746615083,
+      "current_mean": 33178.10050900901,
+      "reference_median": 24613.64,
+      "current_median": 30412.785,
+      "reference_std": 22222.680406357864,
+      "current_std": 25241.891563659632,
+      "ks_statistic": 0.19703939916705882,
+      "ks_p_value": 9.198611740762551e-06,
+      "standardized_mean_shift": 0.2884260114678825,
+      "population_stability_index": 0.18853618801495806,
+      "thresholds": {
+        "psi_possible_shift": 0.1,
+        "psi_drift_signal": 0.2,
+        "ks_p_value": 0.05,
+        "standardized_mean_shift_for_drift_signal": 0.2
+      },
+      "note": "Heuristic distribution diagnostics only. Statistical significance is sample-size sensitive and does not establish model degradation."
+    },
+    "comparison": "Earlier 70% of daily sales vs later 30%",
+    "date_reference_start": "2009-12-01",
+    "date_reference_end": "2011-05-01",
+    "date_current_start": "2011-05-02",
+    "date_current_end": "2011-12-09",
+    "feature": "dailySales",
+    "caveat": "Historical temporal drift analysis, not live production monitoring."
+  },
+  "churn_score_distribution": {
+    "status": "REPORT_CREATED",
+    "reference_rows": 3019,
+    "current_rows": 1294,
+    "html_report": "reports\\modelReports\\churnScoreDriftReport.html",
+    "evidently_result": {
+      "metrics": [
+        {
+          "id": "15e89f895b482f9b84ba7274ed18a106",
+          "metric_name": "DriftedColumnsCount(drift_share=0.5)",
+          "config": {
+            "type": "evidently:metric_v2:DriftedColumnsCount",
+            "drift_share": 0.5
+          },
+          "value": {
+            "count": 1.0,
+            "share": 1.0
+          }
+        },
+        {
+          "id": "032364ac4cf9172c9c36191a1ffeac44",
+          "metric_name": "ValueDrift(column=churnProbability,method=Wasserstein distance (normed),threshold=0.1)",
+          "config": {
+            "type": "evidently:metric_v2:ValueDrift",
+            "column": "churnProbability",
+            "method": "Wasserstein distance (normed)",
+            "threshold": 0.1
+          },
+          "value": 3.4120061122267593
+        }
+      ],
+      "tests": []
+    },
+    "distribution_metrics": {
+      "status": "DRIFT_SIGNAL",
+      "reference_valid_rows": 3019,
+      "current_valid_rows": 1294,
+      "reference_mean": 0.6887152335607818,
+      "current_mean": 0.20621952166112828,
+      "reference_median": 0.7163785,
+      "current_median": 0.223394795,
+      "reference_std": 0.14143457711983923,
+      "current_std": 0.12550458421720706,
+      "ks_statistic": 1.0,
+      "ks_p_value": 0.0,
+      "standardized_mean_shift": -3.608603888510749,
+      "population_stability_index": 12.433067580909395,
+      "thresholds": {
+        "psi_possible_shift": 0.1,
+        "psi_drift_signal": 0.2,
+        "ks_p_value": 0.05,
+        "standardized_mean_shift_for_drift_signal": 0.2
+      },
+      "note": "Heuristic distribution diagnostics only. Statistical significance is sample-size sensitive and does not establish model degradation."
+    },
+    "comparison": "First 70% vs last 30% of rows in saved prediction file",
+    "feature": "churnProbability",
+    "caveat": "Rows are not a time-ordered production stream; this is a score-distribution diagnostic only."
+  },
+  "errors": [],
+  "limitations": [
+    "Source transaction data ends on 2011-12-09.",
+    "Historical comparisons are not live monitoring.",
+    "Churn score distribution comparison is not time-ordered and is diagnostic only.",
+    "Forecast metrics use the existing 30-day holdout, not a new independent test.",
+    "The source data lacks reliable on-hand stock and unit-cost fields."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "mae": 36949.81810402984,
+  "rmse": 48005.30976647323,
+  "mapeNonZeroDaysPercent": 51.832540493537394,
+  "wapePercent": 65.4338599017904,
+  "evaluatedDays": 30,
+  "nonZeroActualDays": 26,
+  "model": "lstmDailySalesBaseline",
+  "sequenceLength": 30,
+  "hiddenSize": 32,
+  "maxEpochs": 100,
+  "validationDays": 60,
+  "trainingRows": 709,
+  "holdoutRows": 30,
+  "holdoutStart": "2011-11-10",
+  "holdoutEnd": "2011-12-09",
+  "scalerFitOnTrainingDataOnly": true,
+  "forecastClippedAtZero": true,
+  "forecastMethod": "recursive"
+}

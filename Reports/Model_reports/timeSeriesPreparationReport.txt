@@ -1,0 +1,51 @@
+RETAILPULSE - TIME SERIES PREPARATION REPORT
+=======================================================
+Input file: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\cleanedTransactions.csv
+Target: sum of positive SalesAmount for rows marked isCandidateSale
+Interpretation: eligible gross sales, not net sales after returns
+Currency: source dataset currency; not independently verified
+
+DATA COVERAGE
+-------------------------------------------------------
+Start date: 2009-12-01
+End date: 2011-12-09
+Calendar-day observations: 739
+Days with observed eligible sales before date filling: 604
+Inserted zero-sales calendar days: 135
+Candidate transaction rows used: 1,041,670
+Total eligible sales amount: 20,972,594.57
+Mean daily sales: 28,379.69
+Median daily sales: 25,955.01
+Standard deviation: 23,366.48
+Minimum daily sales: 0.00
+Maximum daily sales: 200,938.60
+
+STATIONARITY: AUGMENTED DICKEY-FULLER TEST
+-------------------------------------------------------
+ADF statistic: -2.006780
+p-value: 0.28360807
+Used lags: 20
+Observations used: 718
+5% critical value: -2.865574
+Conclusion: Insufficient evidence to reject a unit root at the 5% level.
+Note: this test evaluates the level series; it does not prove forecast quality or rule out all forms of seasonality.
+
+SEASONAL DECOMPOSITION
+-------------------------------------------------------
+Model: additive
+Seasonal period: 7 days (weekly)
+Interpretation: inspect the trend, weekly pattern and residual components in the saved decomposition figure.
+
+OUTPUTS
+-------------------------------------------------------
+Daily series: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\dailySales.csv
+Daily sales plot: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\dailySalesTimeSeries.png
+Decomposition plot: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\salesTimeSeriesDecomposition.png
+Autocorrelation plot: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\dailySalesAutocorrelation.png
+
+LIMITATIONS
+-------------------------------------------------------
+Zero-filled dates mean no eligible sales were recorded on those dates; they do not establish that the business was open.
+The sales target excludes rows not marked as candidate sales and therefore is not net revenue after returns or cancellations.
+The dataset is historical and ends at its last recorded transaction.
+Forecast accuracy must be measured separately on a chronological holdout.

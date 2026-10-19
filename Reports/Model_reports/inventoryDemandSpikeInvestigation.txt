@@ -1,0 +1,58 @@
+RETAILPULSE INVENTORY DEMAND SPIKE INVESTIGATION
+================================================
+Source: data\processedData\cleanedTransactions.csv
+Qualifying source rows for selected products: 1991
+Recent 28-day window: 2011-11-12 to 2011-12-09
+Cross-sheet duplicate copies excluded when the flag is available.
+
+DAILY SALES DETAIL (largest days per product)
+
+PROD02919:
+  2011-12-09 | units=80995.000 | rows=1 | invoices=1 | shareOf28d=1.000
+
+PROD01746:
+  2011-12-07 | units=1404.000 | rows=1 | invoices=1 | shareOf28d=0.937
+  2011-12-05 | units=25.000 | rows=3 | invoices=3 | shareOf28d=0.017
+  2011-12-02 | units=11.000 | rows=4 | invoices=3 | shareOf28d=0.007
+  2011-11-16 | units=7.000 | rows=2 | invoices=2 | shareOf28d=0.005
+  2011-11-17 | units=7.000 | rows=2 | invoices=2 | shareOf28d=0.005
+
+PROD02825:
+  2011-12-08 | units=700.000 | rows=2 | invoices=2 | shareOf28d=0.914
+  2011-12-04 | units=11.000 | rows=3 | invoices=3 | shareOf28d=0.014
+  2011-12-05 | units=9.000 | rows=3 | invoices=3 | shareOf28d=0.012
+  2011-11-15 | units=8.000 | rows=4 | invoices=4 | shareOf28d=0.010
+  2011-11-23 | units=8.000 | rows=2 | invoices=2 | shareOf28d=0.010
+
+PROD00630:
+  2011-11-24 | units=592.000 | rows=3 | invoices=3 | shareOf28d=0.857
+  2011-11-20 | units=12.000 | rows=2 | invoices=2 | shareOf28d=0.017
+  2011-11-14 | units=8.000 | rows=1 | invoices=1 | shareOf28d=0.012
+  2011-11-17 | units=8.000 | rows=1 | invoices=1 | shareOf28d=0.012
+  2011-11-21 | units=8.000 | rows=1 | invoices=1 | shareOf28d=0.012
+
+PROD03822:
+  2011-11-30 | units=480.000 | rows=1 | invoices=1 | shareOf28d=0.850
+  2011-12-06 | units=48.000 | rows=1 | invoices=1 | shareOf28d=0.085
+  2011-11-21 | units=24.000 | rows=1 | invoices=1 | shareOf28d=0.042
+  2011-11-27 | units=6.000 | rows=1 | invoices=1 | shareOf28d=0.011
+  2011-11-13 | units=5.000 | rows=1 | invoices=1 | shareOf28d=0.009
+
+PROD01240:
+  2011-11-15 | units=1.000 | rows=1 | invoices=1 | shareOf28d=1.000
+
+PROD01458:
+  2011-11-28 | units=6.000 | rows=1 | invoices=1 | shareOf28d=1.000
+
+TOP-DAY TRANSACTION LINES FOR THE HIGHEST-SPIKE PRODUCT
+
+Peak day: 2011-12-09; qualifying rows on that day: 1
+Units summed on peak day: 80995.000
+  invoiceDate=2011-12-09 09:15:00 | invoice=581483 | ProductID=PROD02919 | description=PAPER CRAFT , LITTLE BIRDIE | quantity=80995 | unitPrice=2.08
+
+INTERPRETATION NOTES
+- Large daily totals may reflect a genuine bulk order; verify invoice, quantity, and product description.
+- Do not automatically cap, remove, or convert flagged demand without source-level evidence.
+- This investigation uses historical sales only; it cannot establish current inventory or future supplier availability.
+
+Daily detail CSV: reports\modelReports\inventoryDemandSpikeDailyDetails.csv

@@ -1,0 +1,11 @@
+feature,meanAbsoluteShap
+recencyDays,0.4292464
+transactionRows,0.42845464
+monetaryTotal,0.22606558
+uniquePurchaseDays,0.16631867
+frequency,0.16158606
+averageUnitPrice,0.14810798
+purchaseSpanDays,0.1461292
+quantityTotal,0.13792457
+averageOrderValue,0.12850204
+averageQuantity,0.12161669

@@ -1,0 +1,32 @@
+{
+  "module": "RetailPulse inventory optimization baseline",
+  "input": "data\\processedData\\cleanedTransactions.csv",
+  "sourceDateRange": {
+    "start": "2009-12-01",
+    "end": "2011-12-09"
+  },
+  "qualifyingTransactionRowsAfterCrossSheetCopyExclusion": 1019654,
+  "uniqueProductsAnalyzed": 4916,
+  "productsWithSalesInLast28Days": 2896,
+  "productsWithSalesInLast90Days": 3234,
+  "productsFlaggedActiveReview": 2896,
+  "productsWithNoRecentSalesReview": 1682,
+  "planningAssumptions": {
+    "leadTimeDays": 14,
+    "reviewPeriodDays": 7,
+    "planningHorizonDays": 30,
+    "serviceLevelApprox": 0.95,
+    "zScore": 1.645,
+    "recentWindowDays": 28,
+    "longWindowDays": 90
+  },
+  "limitations": [
+    "StockQuantity is missing, so actual on-hand inventory and order quantities cannot be determined.",
+    "UnitCost is missing, so holding costs, order costs, and monetary savings cannot be calculated.",
+    "Demand estimates use historical product-level sales rates, not product-level Prophet/LSTM forecasts.",
+    "Lead time and review period are illustrative assumptions, not verified supplier parameters.",
+    "The source ends on 2011-12-09 and is not live inventory data.",
+    "No reduction in stockouts, overstock, or costs is claimed."
+  ],
+  "outputCsv": "reports\\modelReports\\inventoryOptimizationRecommendations.csv"
+}

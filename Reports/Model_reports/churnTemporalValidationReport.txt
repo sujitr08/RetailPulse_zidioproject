@@ -1,0 +1,39 @@
+RETAILPULSE — CUSTOMER CHURN TEMPORAL VALIDATION
+======================================================
+Dataset: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\cleanedTransactions.csv
+Maximum qualifying purchase date: 2011-12-09
+Feature window: 365 days
+Label window: 90 days
+Training cutoffs: 2011-03-14, 2011-06-12
+Test cutoff: 2011-09-10
+Test label window end: 2011-12-09
+Training snapshot rows: 8,636
+Test customers: 4,313
+
+Temporal ROC-AUC: 0.7633 (target >= 0.88)
+Temporal precision@top 20%: 0.7381 (target >= 0.75)
+Temporal average precision: 0.7099
+Precision at 0.5: 0.6579
+Recall at 0.5: 0.7977
+F1 at 0.5: 0.7211
+
+CAVEATS
+- A temporal split is more realistic than a random split, but only one final cutoff is tested.
+- Customers may occur in multiple snapshots; interpret this as repeated point-in-time scoring.
+- The dataset is historical and ends in 2011; results may not generalize to current retail behavior.
+- ROC-AUC and precision targets are goals, not guaranteed outcomes.
+- Unit cost and inventory fields are not used because source values are unavailable or unverified.
+
+Classification report (temporal test snapshot):
+              precision    recall  f1-score   support
+
+           0       0.75      0.60      0.67      2187
+           1       0.66      0.80      0.72      2126
+
+    accuracy                           0.70      4313
+   macro avg       0.71      0.70      0.69      4313
+weighted avg       0.71      0.70      0.69      4313
+
+
+Metrics JSON: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\churnTemporalValidationMetrics.json
+Predictions CSV: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\churnTemporalRiskPredictions.csv

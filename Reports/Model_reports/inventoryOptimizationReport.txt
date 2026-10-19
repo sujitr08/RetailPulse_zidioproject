@@ -1,0 +1,32 @@
+RETAILPULSE INVENTORY OPTIMIZATION BASELINE
+==============================================
+Source date range: 2009-12-01 to 2011-12-09
+Qualifying transaction rows after excluding flagged cross-sheet copies: 1,019,654
+Unique products analyzed: 4,916
+Products with sales in last 28 days: 2,896
+Products with sales in last 90 days: 3,234
+Products flagged for active replenishment review: 2,896
+Products with no recent sales (review before ordering): 1,682
+
+ASSUMPTIONS
+- Lead time: 14 days
+- Review period: 7 days
+- Planning horizon: 30 days
+- Service level: approximately 95% (normal-approximation z-score 1.645)
+- Demand rate: 60% recent 28-day average + 40% 90-day average
+
+INTERPRETATION
+- Reorder point = estimated daily demand × assumed lead time + estimated safety stock.
+- Target stock covers assumed lead time plus review period, plus estimated safety stock.
+- 'Replenishment units if stock zero' is a scenario, NOT an actual purchase order.
+- Product-level rates are historical estimates, not Prophet/LSTM product forecasts.
+
+LIMITATIONS
+- StockQuantity is missing, so actual on-hand inventory and order quantities cannot be determined.
+- UnitCost is missing, so holding costs, order costs, and monetary savings cannot be calculated.
+- Demand estimates use historical product-level sales rates, not product-level Prophet/LSTM forecasts.
+- Lead time and review period are illustrative assumptions, not verified supplier parameters.
+- The source ends on 2011-12-09 and is not live inventory data.
+- No reduction in stockouts, overstock, or costs is claimed.
+
+Recommendations CSV: reports\modelReports\inventoryOptimizationRecommendations.csv

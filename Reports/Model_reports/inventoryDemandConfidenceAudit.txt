@@ -1,0 +1,43 @@
+RETAILPULSE INVENTORY DEMAND CONFIDENCE AUDIT
+============================================
+Source file: data\processedData\cleanedTransactions.csv
+Rows read: 1067371
+Qualifying transaction rows after filters: 1019654
+Products assessed: 4916
+Window end date: 2011-12-09
+Demand baseline: 60% x 28-calendar-day average + 40% x 90-calendar-day average.
+Zero-sale calendar days are included in the fixed window denominators.
+
+REVIEW RULES
+- Flag products with low recent active-day count and a concentrated sales day or recent rate >=3x the 90-day rate.
+- Flag products when >=80% of 28-day units occurred on a single day.
+- Flags are review prompts, not automatic evidence of erroneous transactions.
+
+Products flagged for manual review: 378
+
+TOP FLAGGED PRODUCTS
+ProductID | Units28d | ActiveDays28d | PeakDayShare | AvgDaily28 | AvgDaily90 | BaselineDaily | Baseline30d | Review
+PROD02919 | 80995.000 | 1 | 1.000 | 2892.679 | 899.944 | 2095.585 | 62867.548 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01746 | 1499.000 | 16 | 0.937 | 53.536 | 22.733 | 41.215 | 1236.443 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD02825 | 766.000 | 13 | 0.914 | 27.357 | 13.744 | 21.912 | 657.362 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD00630 | 691.000 | 15 | 0.857 | 24.679 | 17.233 | 21.700 | 651.014 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD03822 | 565.000 | 6 | 0.850 | 20.179 | 18.611 | 19.552 | 586.548 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD02484 | 631.000 | 20 | 0.800 | 22.536 | 14.811 | 19.446 | 583.376 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD02744 | 704.000 | 18 | 0.896 | 25.143 | 9.522 | 18.895 | 566.838 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01806 | 667.000 | 16 | 0.900 | 23.821 | 8.011 | 17.497 | 524.919 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD02500 | 461.000 | 21 | 0.848 | 16.464 | 13.067 | 15.105 | 453.157 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01541 | 366.000 | 11 | 0.921 | 13.071 | 8.567 | 11.270 | 338.086 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01490 | 339.000 | 15 | 0.853 | 12.107 | 4.711 | 9.149 | 274.462 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01240 | 1.000 | 1 | 1.000 | 0.036 | 20.011 | 8.026 | 240.776 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD03419 | 219.000 | 6 | 0.913 | 7.821 | 7.233 | 7.586 | 227.586 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD01458 | 6.000 | 1 | 1.000 | 0.214 | 16.933 | 6.902 | 207.057 | LOW - SPIKE/CONCENTRATION REVIEW
+PROD03601 | 215.000 | 9 | 0.842 | 7.679 | 3.522 | 6.016 | 180.481 | LOW - SPIKE/CONCENTRATION REVIEW
+
+LIMITATIONS
+- This report does not overwrite existing replenishment recommendations.
+- Historical transaction rates are not product-level Prophet/LSTM forecasts.
+- The source data has no reliable stock-on-hand or unit-cost values.
+- Lead time and service level must be supplied and validated separately.
+- Review flags do not automatically remove or cap demand; investigate source transactions first.
+
+CSV output: reports\modelReports\inventoryDemandConfidenceAudit.csv

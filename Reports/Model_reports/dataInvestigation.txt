@@ -1,0 +1,166 @@
+
+=================================================================
+COMBINED DATASET
+=================================================================
+Rows: 1,067,371
+Columns: ['Invoice', 'StockCode', 'Description', 'Quantity', 'InvoiceDate', 'Price', 'Customer ID', 'Country']
+
+=================================================================
+MONTHLY DATE COVERAGE
+=================================================================
+InvoiceDate
+2009-12    45228
+2010-01    31555
+2010-02    29388
+2010-03    41511
+2010-04    34057
+2010-05    35323
+2010-06    39983
+2010-07    33383
+2010-08    33306
+2010-09    42091
+2010-10    59098
+2010-11    78015
+2010-12    65004
+2011-01    35147
+2011-02    27707
+2011-03    36748
+2011-04    29916
+2011-05    37030
+2011-06    36874
+2011-07    39518
+2011-08    35284
+2011-09    50226
+2011-10    60742
+2011-11    84711
+2011-12    25526
+Freq: M
+
+=================================================================
+INVOICE IDENTIFIERS
+=================================================================
+Invoices beginning with C: 19,494
+Missing invoice IDs: 0
+
+=================================================================
+EXACT DUPLICATE EXAMPLES
+=================================================================
+Invoice StockCode                       Description  Quantity         InvoiceDate  Price  Customer ID        Country
+ 489517     21491   SET OF THREE VINTAGE GIFT WRAPS         1 2009-12-01 11:34:00   1.95      16329.0 United Kingdom
+ 489517     21491   SET OF THREE VINTAGE GIFT WRAPS         1 2009-12-01 11:34:00   1.95      16329.0 United Kingdom
+ 489517     21821  GLITTER STAR GARLAND WITH BELLS          1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21821  GLITTER STAR GARLAND WITH BELLS          1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21912          VINTAGE SNAKES & LADDERS         1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21912          VINTAGE SNAKES & LADDERS         1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21912          VINTAGE SNAKES & LADDERS         1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21913    VINTAGE SEASIDE JIGSAW PUZZLES         1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     21913    VINTAGE SEASIDE JIGSAW PUZZLES         1 2009-12-01 11:34:00   3.75      16329.0 United Kingdom
+ 489517     22130  PARTY CONE CHRISTMAS DECORATION          6 2009-12-01 11:34:00   0.85      16329.0 United Kingdom
+ 489517     22130  PARTY CONE CHRISTMAS DECORATION          6 2009-12-01 11:34:00   0.85      16329.0 United Kingdom
+ 489517     22319 HAIRCLIPS FORTIES FABRIC ASSORTED        12 2009-12-01 11:34:00   0.65      16329.0 United Kingdom
+ 489517     22319 HAIRCLIPS FORTIES FABRIC ASSORTED        12 2009-12-01 11:34:00   0.65      16329.0 United Kingdom
+ 489517    84951A   S/4 PISTACHIO LOVEBIRD COASTERS         1 2009-12-01 11:34:00   2.55      16329.0 United Kingdom
+ 489517    84951A   S/4 PISTACHIO LOVEBIRD COASTERS         1 2009-12-01 11:34:00   2.55      16329.0 United Kingdom
+ 489529     22028      PENNY FARTHING BIRTHDAY CARD        12 2009-12-01 11:51:00   0.42      17984.0 United Kingdom
+ 489529     22028      PENNY FARTHING BIRTHDAY CARD        12 2009-12-01 11:51:00   0.42      17984.0 United Kingdom
+ 489529     22036            DINOSAUR BIRTHDAY CARD        12 2009-12-01 11:51:00   0.42      17984.0 United Kingdom
+ 489529     22036            DINOSAUR BIRTHDAY CARD        12 2009-12-01 11:51:00   0.42      17984.0 United Kingdom
+ 489529     48129                  DOOR MAT TOPIARY         1 2009-12-01 11:51:00   6.75      17984.0 United Kingdom
+
+=================================================================
+NON-POSITIVE QUANTITY EXAMPLES
+=================================================================
+Invoice StockCode                         Description  Quantity         InvoiceDate  Price  Customer ID
+C489449     22087            PAPER BUNTING WHITE LACE       -12 2009-12-01 10:33:00   2.95      16321.0
+C489449    85206A        CREAM FELT EASTER EGG BASKET        -6 2009-12-01 10:33:00   1.65      16321.0
+C489449     21895       POTTING SHED SOW 'N' GROW SET        -4 2009-12-01 10:33:00   4.25      16321.0
+C489449     21896                  POTTING SHED TWINE        -6 2009-12-01 10:33:00   2.10      16321.0
+C489449     22083          PAPER CHAIN KIT RETRO SPOT       -12 2009-12-01 10:33:00   2.95      16321.0
+C489449     21871                 SAVE THE PLANET MUG       -12 2009-12-01 10:33:00   1.25      16321.0
+C489449     84946     ANTIQUE SILVER TEA GLASS ETCHED       -12 2009-12-01 10:33:00   1.25      16321.0
+C489449    84970S   HANGING HEART ZINC T-LIGHT HOLDER       -24 2009-12-01 10:33:00   0.85      16321.0
+C489449     22090           PAPER BUNTING RETRO SPOTS       -12 2009-12-01 10:33:00   2.95      16321.0
+C489459    90200A          PURPLE SWEETHEART BRACELET        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90200D            PINK SWEETHEART BRACELET        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90200B           BLACK SWEETHEART BRACELET        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90200E           GREEN SWEETHEART BRACELET        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90200C            BLUE SWEETHEART BRACELET        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90185C      BLACK DIAMANTE EXPANDABLE RING        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90185B   AMETHYST DIAMANTE EXPANDABLE RING        -3 2009-12-01 10:44:00   4.25      17592.0
+C489459    90003C MIDNIGHT BLUE PAIR HEART HAIR SLIDE        -3 2009-12-01 10:44:00   3.75      17592.0
+C489459    90003D      CRYSTAL PAIR HEART HAIR SLIDES        -3 2009-12-01 10:44:00   3.75      17592.0
+C489459    90003B  ROSE COLOUR PAIR HEART HAIR SLIDES        -3 2009-12-01 10:44:00   3.75      17592.0
+C489459    90209C         PINK ENAMEL+GLASS HAIR COMB        -3 2009-12-01 10:44:00   2.10      17592.0
+
+=================================================================
+ZERO OR NEGATIVE PRICE EXAMPLES
+=================================================================
+Invoice StockCode         Description  Quantity         InvoiceDate  Price  Customer ID
+ 489464     21733        85123a mixed       -96 2009-12-01 10:52:00    0.0          NaN
+ 489463     71477               short      -240 2009-12-01 10:52:00    0.0          NaN
+ 489467    85123A         21733 mixed      -192 2009-12-01 10:53:00    0.0          NaN
+ 489521     21646                 NaN       -50 2009-12-01 11:44:00    0.0          NaN
+ 489655     20683                 NaN       -44 2009-12-01 17:26:00    0.0          NaN
+ 489659     21350                 NaN       230 2009-12-01 17:39:00    0.0          NaN
+ 489660     35956                lost     -1043 2009-12-01 17:43:00    0.0          NaN
+ 489663    35605A             damages      -117 2009-12-01 18:02:00    0.0          NaN
+ 489781     84292                 NaN        17 2009-12-02 11:45:00    0.0          NaN
+ 489806     18010                 NaN      -770 2009-12-02 12:42:00    0.0          NaN
+ 489820     21133     invcd as 84879?      -720 2009-12-02 13:23:00    0.0          NaN
+ 489821    85049G                 NaN      -240 2009-12-02 13:25:00    0.0          NaN
+ 489825     22076  6 RIBBONS EMPIRE          12 2009-12-02 13:34:00    0.0      16126.0
+ 489861       DOT      DOTCOM POSTAGE         1 2009-12-02 14:50:00    0.0          NaN
+ 489882    35751C                 NaN        12 2009-12-02 16:22:00    0.0          NaN
+ 489898    79323G                 NaN       954 2009-12-03 09:40:00    0.0          NaN
+ 489899   79323GR        sold as gold      -954 2009-12-03 09:41:00    0.0          NaN
+ 489901     21098                 NaN      -200 2009-12-03 09:47:00    0.0          NaN
+ 489903     21166                 NaN        48 2009-12-03 09:57:00    0.0          NaN
+ 489998     48185 DOOR MAT FAIRY CAKE         2 2009-12-03 11:19:00    0.0      15658.0
+ 490007     84347               21494      -720 2009-12-03 12:09:00    0.0          NaN
+ 490015     21982                 NaN       467 2009-12-03 12:29:00    0.0          NaN
+ 490016     21982                 NaN     -1012 2009-12-03 12:30:00    0.0          NaN
+ 490055     20620                 NaN       -25 2009-12-03 13:22:00    0.0          NaN
+ 490084     85064                 NaN       -89 2009-12-03 15:37:00    0.0          NaN
+ 490123    84508B                 NaN       184 2009-12-03 18:08:00    0.0          NaN
+ 490130     21493               lost?      -600 2009-12-03 18:28:00    0.0          NaN
+ 490146     21558                 NaN      -169 2009-12-04 09:29:00    0.0          NaN
+ 490150     84347                 NaN        80 2009-12-04 09:44:00    0.0          NaN
+ 490165     21493                 NaN      -106 2009-12-04 11:32:00    0.0          NaN
+
+=================================================================
+MISSING CUSTOMER ID — QUANTITY AND PRICE SUMMARY
+=================================================================
+            Quantity          Price
+count  243007.000000  243007.000000
+mean        1.540548       7.948744
+std        98.859370     224.275451
+min     -9600.000000  -53594.360000
+25%         1.000000       1.660000
+50%         1.000000       3.290000
+75%         2.000000       5.790000
+max     10200.000000   25111.090000
+
+=================================================================
+MISSING DESCRIPTION — STOCK CODE COUNTS
+=================================================================
+StockCode
+22139     12
+84990     12
+79321     11
+35965     11
+22950     10
+23084     10
+22087      9
+22084      9
+71477      8
+37461      8
+72803B     7
+37509      7
+35970      7
+84977      7
+21768      7
+22528      7
+POST       7
+84795D     7
+22451      7
+37446      6

@@ -1,0 +1,46 @@
+RetailPulse Model Monitoring Report
+====================================
+Generated (UTC): 2026-10-19T07:02:03.256006+00:00
+Assessment: Historical offline monitoring; not live production monitoring
+Overall status: COMPLETED_WITH_CAVEATS
+
+Status summary:
+- forecast_metrics: PASS
+- churn_metrics: PASS
+- sales_data_drift: REPORT_CREATED
+- churn_score_distribution: REPORT_CREATED
+
+Forecast holdout metrics:
+- Prophet: MAE=20906.799337716842, RMSE=35770.989813506945, MAPE=27.500285647689203%, WAPE=37.023526639099856%
+- LSTM: MAE=36949.81825246734, RMSE=48005.31054138705, MAPE=51.832540259975936%, WAPE=65.43385997454733%
+- Equal-weight ensemble: MAE=28902.860391661892, RMSE=41373.56143338266, MAPE=39.60900235757574%, WAPE=51.18362712394687%
+
+Churn temporal holdout reassessment:
+- ROC-AUC: 0.7632644752344415
+- Average precision: 0.7099127775815992
+- Precision at 0.5: 0.6578743211792087
+
+Sales drift:
+- Status: REPORT_CREATED
+- Report: reports\modelReports\salesDataDriftReport.html
+- Quantitative drift status: DRIFT_SIGNAL
+- KS statistic: 0.19703939916705882
+- KS p-value: 9.198611740762551e-06
+- Population Stability Index (PSI): 0.18853618801495806
+- Standardized mean shift: 0.2884260114678825
+
+Churn score distribution diagnostic:
+- Status: REPORT_CREATED
+- Report: reports\modelReports\churnScoreDriftReport.html
+- Diagnostic status: DRIFT_SIGNAL
+- KS statistic: 1.0
+- KS p-value: 0.0
+- Population Stability Index (PSI): 12.433067580909395
+- Standardized mean shift: -3.608603888510749
+
+Limitations:
+- Source transaction data ends on 2011-12-09.
+- Historical comparisons are not live monitoring.
+- Churn score distribution comparison is not time-ordered and is diagnostic only.
+- Forecast metrics use the existing 30-day holdout, not a new independent test.
+- The source data lacks reliable on-hand stock and unit-cost fields.

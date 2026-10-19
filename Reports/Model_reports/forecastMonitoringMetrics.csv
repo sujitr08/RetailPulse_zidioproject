@@ -1,0 +1,4 @@
+observations,mae,rmse,mape_nonzero_actual_percent,wape_percent,mean_error_forecast_minus_actual,status,model,source_file,date_start,date_end
+30,20906.799337716842,35770.989813506945,27.500285647689203,37.023526639099856,-16678.960281089134,PASS,Prophet,data\processedData\prophetHoldoutForecast.csv,2011-11-10,2011-12-09
+30,36949.81825246734,48005.31054138705,51.832540259975936,65.43385997454733,-29036.160160785614,PASS,LSTM,data\processedData\lstmHoldoutForecast.csv,2011-11-10,2011-12-09
+30,28902.860391661892,41373.56143338266,39.60900235757574,51.18362712394687,-22857.560220937376,PASS,Equal-weight ensemble,data\processedData\ensembleHoldoutForecast.csv,2011-11-10,2011-12-09

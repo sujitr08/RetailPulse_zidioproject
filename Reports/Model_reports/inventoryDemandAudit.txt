@@ -1,0 +1,27 @@
+RETAILPULSE INVENTORY DEMAND AUDIT
+====================================
+Dataset date range: 2009-12-01 to 2011-12-09
+Global calendar days: 739
+Products analyzed: 4916
+Demand rate formula: 0.60 * mean daily units over global last 28 days
+                   + 0.40 * mean daily units over global last 90 days
+Zero-sale calendar days are included in both windows.
+
+TOP 10 PRODUCTS BY ESTIMATED 30-DAY DEMAND
+ProductID  unitsSoldLast28Days  averageDailyDemandLast28  averageDailyDemandLast90  estimatedDailyDemand  estimatedDemandNext30Days  activeSalesDaysLast28
+PROD02919              80995.0                  2892.679                   899.944              2095.585                  62867.548                      1
+PROD02395              14373.0                   513.321                   285.489               422.188                  12665.652                     24
+PROD01550              13945.0                   498.036                   306.378               421.373                  12641.176                     24
+PROD01442               7062.0                   252.214                   168.656               218.791                   6563.724                     24
+PROD03807               3991.0                   142.536                   189.389               161.277                   4838.310                     23
+PROD04615               3904.0                   139.429                   175.689               153.933                   4617.981                     24
+PROD01902               4535.0                   161.964                   112.911               142.343                   4270.290                     24
+PROD04310               4044.0                   144.429                   131.467               139.244                   4177.314                     24
+PROD00243               4306.0                   153.786                    95.367               130.418                   3912.543                     24
+PROD02268               3634.0                   129.786                   128.133               129.125                   3873.743                     24
+
+LIMITATIONS
+- These are historical-rate estimates, not SKU-level Prophet/LSTM forecasts.
+- Stock on hand and unit cost are unavailable; do not interpret target stock as a purchase order.
+- Lead time 14 days, review period 7 days, service level approximately 95% are assumptions.
+- Dataset is historical and ends 2011-12-09.

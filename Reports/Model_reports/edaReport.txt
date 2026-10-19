@@ -1,0 +1,102 @@
+RETAILPULSE — EXPLORATORY DATA ANALYSIS
+=======================================================
+Dataset rows: 1,067,371
+Dataset columns: 22
+Date range: 2009-12-01 07:45:00 to 2011-12-09 12:50:00
+Unique invoices: 53,628
+Unique stock codes: 5,304
+Unique identified customers: 5,942
+Countries: 43
+
+MISSING VALUES
+-------------------------------------------------------
+UnitCost: 1,067,371 (100.00%)
+StockQuantity: 1,067,371 (100.00%)
+customerId: 243,007 (22.77%)
+description: 4,382 (0.41%)
+stockCode: 0 (0.00%)
+invoice: 0 (0.00%)
+unitPrice: 0 (0.00%)
+invoiceDate: 0 (0.00%)
+quantity: 0 (0.00%)
+country: 0 (0.00%)
+ProductID: 0 (0.00%)
+sourceSheet: 0 (0.00%)
+ProductCategory: 0 (0.00%)
+SalesAmount: 0 (0.00%)
+isExactDuplicate: 0 (0.00%)
+hasMissingCustomerId: 0 (0.00%)
+hasMissingDescription: 0 (0.00%)
+hasInvalidDate: 0 (0.00%)
+hasNonPositiveQuantity: 0 (0.00%)
+hasNonPositivePrice: 0 (0.00%)
+isCancellationInvoice: 0 (0.00%)
+isCandidateSale: 0 (0.00%)
+
+NUMERIC SUMMARY
+-------------------------------------------------------
+         quantity   unitPrice  SalesAmount
+count  1067371.00  1067371.00   1067371.00
+mean         9.94        4.65        18.07
+std        172.71      123.55       292.42
+min     -80995.00   -53594.36   -168469.60
+25%          1.00        1.25         3.75
+50%          3.00        2.10         9.90
+75%         10.00        4.15        17.70
+max      80995.00    38970.00    168469.60
+
+PRELIMINARY CANDIDATE-SALE SUBSET
+-------------------------------------------------------
+Rows selected: 1,041,670
+Note: candidate-sale filtering is preliminary and requires business-rule validation.
+Candidate subset sales amount: 20,972,594.57
+
+MONTHLY CANDIDATE-SALE AMOUNT
+-------------------------------------------------------
+salesMonth
+2009-12     825685.76
+2010-01     652708.50
+2010-02     553339.74
+2010-03     833570.13
+2010-04     681528.99
+2010-05     659858.86
+2010-06     752270.14
+2010-07     650712.94
+2010-08     697274.91
+2010-09     924333.01
+2010-10    1165483.91
+2010-11    1470272.48
+2010-12    1262598.79
+2011-01     691364.56
+2011-02     523631.89
+2011-03     717639.36
+2011-04     537808.62
+2011-05     770536.02
+2011-06     761739.90
+2011-07     719221.19
+2011-08     759138.38
+2011-09    1058590.17
+2011-10    1154979.30
+2011-11    1509496.33
+2011-12     638810.68
+
+PRODUCT CATEGORY COVERAGE
+-------------------------------------------------------
+ProductCategory
+Uncategorized         566838
+KitchenAndDining      123263
+StationeryAndGifts     94889
+HomeDecor              93398
+Lighting               83299
+GardenAndOutdoor       33639
+Textiles               31795
+Accessories            24217
+ToysAndGames           16033
+
+INTERPRETATION AND LIMITATIONS
+-------------------------------------------------------
+- Candidate-sale results depend on the current filtering rule.
+- Product categories are heuristic labels, not verified product taxonomy.
+- Missing customer IDs limit customer-level analysis.
+- The numeric correlation heatmap describes association, not causation.
+- Source data does not provide actual unit costs or stock-on-hand quantities.

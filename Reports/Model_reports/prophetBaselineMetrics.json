@@ -1,0 +1,17 @@
+{
+  "mae": 20906.799337716842,
+  "rmse": 35770.989813506945,
+  "mapeNonZeroDaysPercent": 27.500285647689203,
+  "wapePercent": 37.023526639099856,
+  "evaluatedDays": 30,
+  "nonZeroActualDays": 26,
+  "trainingRows": 709,
+  "holdoutRows": 30,
+  "trainingStart": "2009-12-01",
+  "trainingEnd": "2011-11-09",
+  "holdoutStart": "2011-11-10",
+  "holdoutEnd": "2011-12-09",
+  "model": "prophetDailySalesBaseline",
+  "holdoutDaysRequested": 30,
+  "forecastClippedAtZeroForEvaluation": true
+}

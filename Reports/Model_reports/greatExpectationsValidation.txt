@@ -1,0 +1,82 @@
+RETAILPULSE - GREAT EXPECTATIONS DATA VALIDATION
+==========================================================
+Great Expectations version: 1.24.0
+Rows: 1,067,371
+Columns: 24
+Checks passed: 36
+Checks failed: 0
+Overall success: True
+
+CHECK DETAILS
+----------------------------------------------------------
+[PASS] column_exists::invoice
+[PASS] column_exists::stockCode
+[PASS] column_exists::description
+[PASS] column_exists::quantity
+[PASS] column_exists::invoiceDate
+[PASS] column_exists::unitPrice
+[PASS] column_exists::customerId
+[PASS] column_exists::country
+[PASS] column_exists::sourceSheet
+[PASS] column_exists::ProductID
+[PASS] column_exists::ProductCategory
+[PASS] column_exists::UnitCost
+[PASS] column_exists::StockQuantity
+[PASS] column_exists::SalesAmount
+[PASS] column_exists::isWithinSheetDuplicate
+[PASS] column_exists::isCrossSheetDuplicate
+[PASS] column_exists::isExactDuplicate
+[PASS] column_exists::hasMissingCustomerId
+[PASS] column_exists::hasMissingDescription
+[PASS] column_exists::hasInvalidDate
+[PASS] column_exists::hasNonPositiveQuantity
+[PASS] column_exists::hasNonPositivePrice
+[PASS] column_exists::isCancellationInvoice
+[PASS] column_exists::isCandidateSale
+[PASS] not_null::invoice
+    Result: {"element_count": 1067371, "unexpected_count": 0, "unexpected_percent": 0.0, "partial_unexpected_list": [], "partial_unexpected_counts": [], "partial_unexpected_index_list": []}
+[PASS] not_null::stockCode
+    Result: {"element_count": 1067371, "unexpected_count": 0, "unexpected_percent": 0.0, "partial_unexpected_list": [], "partial_unexpected_counts": [], "partial_unexpected_index_list": []}
+[PASS] not_null::invoiceDate
+    Result: {"element_count": 1067371, "unexpected_count": 0, "unexpected_percent": 0.0, "partial_unexpected_list": [], "partial_unexpected_counts": [], "partial_unexpected_index_list": []}
+[PASS] not_null::ProductID
+    Result: {"element_count": 1067371, "unexpected_count": 0, "unexpected_percent": 0.0, "partial_unexpected_list": [], "partial_unexpected_counts": [], "partial_unexpected_index_list": []}
+[PASS] not_null::SalesAmount
+    Result: {"element_count": 1067371, "unexpected_count": 0, "unexpected_percent": 0.0, "partial_unexpected_list": [], "partial_unexpected_counts": [], "partial_unexpected_index_list": []}
+[PASS] duplicate_flag_consistency
+    Result: {"mismatch_rows": 0}
+[PASS] no_missing_ProductID
+    Result: {"missing_rows": 0}
+[PASS] no_missing_SalesAmount
+    Result: {"missing_rows": 0}
+[PASS] valid_invoice_dates
+    Result: {"invalid_rows": 0}
+[PASS] numeric_values::quantity
+    Result: {"invalid_or_missing_rows": 0}
+[PASS] numeric_values::unitPrice
+    Result: {"invalid_or_missing_rows": 0}
+[PASS] numeric_values::SalesAmount
+    Result: {"invalid_or_missing_rows": 0}
+
+DATA QUALITY DIAGNOSTICS
+----------------------------------------------------------
+row_count: 1,067,371
+column_count: 24
+missing_customerId_rows: 243,007
+missing_description_rows: 4,382
+non_positive_quantity_rows: 22,950
+non_positive_unitPrice_rows: 6,207
+within_sheet_duplicate_rows: 12,133
+cross_sheet_duplicate_rows: 22,523
+combined_duplicate_rows: 34,335
+unitCost_populated_rows: 0
+stockQuantity_populated_rows: 0
+candidate_sale_rows: 1,041,670
+
+NOTES
+----------------------------------------------------------
+- Missing customer IDs/descriptions are source-data limitations, not fatal checks.
+- Non-positive quantities/prices are reported, not automatically rejected.
+- UnitCost and StockQuantity remain missing without verified source data.
+- No transaction rows were deleted.
+JSON report: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\greatExpectationsValidation.json

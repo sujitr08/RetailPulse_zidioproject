@@ -1,0 +1,31 @@
+RETAILPULSE — CUSTOMER CHURN MODEL REPORT
+================================================
+Dataset: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\cleanedTransactions.csv
+Observation cutoff: 2011-09-10
+Feature window: 2010-09-10 through 2011-09-10 (365 days)
+Churn label window: after 2011-09-10 through 2011-12-09 (90 days)
+Customers: 4,317
+Churn rate: 49.36%
+
+ROC-AUC: 0.7682 (target >= 0.88)
+Precision@top 20%: 0.7731 (target >= 0.75)
+Average precision: 0.7332
+Precision at 0.5: 0.6741
+Recall at 0.5: 0.7411
+SHAP: success
+
+CAVEATS
+- Churn is operationally defined as no qualifying purchase in the next 90 days.
+- This is an initial baseline using a stratified random split; time-based validation is required before production claims.
+- Inventory and unit cost fields are not used because source values are unavailable/unverified.
+- The target metrics are goals, not guaranteed outcomes.
+
+Classification report (test set):
+              precision    recall  f1-score   support
+
+           0       0.72      0.65      0.68       547
+           1       0.67      0.74      0.71       533
+
+    accuracy                           0.70      1080
+   macro avg       0.70      0.70      0.69      1080
+weighted avg       0.70      0.70      0.69      1080

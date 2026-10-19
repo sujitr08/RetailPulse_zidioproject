@@ -1,0 +1,49 @@
+{
+  "model": "seasonalNaive7Day",
+  "horizonDays": 30,
+  "folds": [
+    {
+      "fold": 1,
+      "trainEnd": "2011-09-10",
+      "holdoutStart": "2011-09-11",
+      "holdoutEnd": "2011-10-10",
+      "metrics": {
+        "MAE": 17088.603333333336,
+        "RMSE": 24426.57362555147,
+        "MAPE_nonzero_days_percent": 38.407821714461335,
+        "WAPE_percent": 43.28246670334515
+      }
+    },
+    {
+      "fold": 2,
+      "trainEnd": "2011-10-10",
+      "holdoutStart": "2011-10-11",
+      "holdoutEnd": "2011-11-09",
+      "metrics": {
+        "MAE": 13082.19,
+        "RMSE": 18490.787896551985,
+        "MAPE_nonzero_days_percent": 36.35432845702495,
+        "WAPE_percent": 31.924482442643775
+      }
+    },
+    {
+      "fold": 3,
+      "trainEnd": "2011-11-09",
+      "holdoutStart": "2011-11-10",
+      "holdoutEnd": "2011-12-09",
+      "metrics": {
+        "MAE": 14536.330666666665,
+        "RMSE": 28652.56583177732,
+        "MAPE_nonzero_days_percent": 26.232338021667594,
+        "WAPE_percent": 25.74216248879303
+      }
+    }
+  ],
+  "meanFoldMetrics": {
+    "MAE": 14902.374666666665,
+    "RMSE": 23856.642451293592,
+    "MAPE_nonzero_days_percent": 33.66482939771796,
+    "WAPE_percent": 33.64970387826065
+  },
+  "note": "Rolling-origin validation; each prediction uses only the preceding training data."
+}

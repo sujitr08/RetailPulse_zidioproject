@@ -1,0 +1,161 @@
+{
+  "title": "RetailPulse churn duplicate-policy sensitivity experiment",
+  "dataset": "data/processedData/cleanedTransactions.csv",
+  "feature_window_days": 365,
+  "label_window_days": 90,
+  "cutoffs": [
+    "2011-03-14",
+    "2011-06-12",
+    "2011-09-10"
+  ],
+  "duplicate_policy": "Baseline uses all qualifying rows. Filtered experiment excludes only rows flagged isCrossSheetDuplicate=True. Within-sheet duplicates are retained. The original cleaned dataset is not modified.",
+  "caveats": [
+    "This is a sensitivity experiment, not proof that all flagged copies are invalid.",
+    "Only one final temporal test cutoff is evaluated.",
+    "Customers may recur across point-in-time snapshots.",
+    "Historical data ends in 2011 and may not generalize to current retail behavior.",
+    "Acceptance thresholds are goals, not guaranteed outcomes."
+  ],
+  "baseline": {
+    "experiment": "baseline_all_qualifying_rows",
+    "train_snapshot_rows": 8636,
+    "test_customers": 4313,
+    "training_cutoffs": [
+      "2011-03-14",
+      "2011-06-12"
+    ],
+    "test_cutoff": "2011-09-10",
+    "test_label_window_end": "2011-12-09",
+    "train_churn_rate": 0.6337424733672997,
+    "test_metrics": {
+      "customers": 4313,
+      "churn_rate": 0.4929283561326223,
+      "roc_auc": 0.7632644752344415,
+      "average_precision": 0.7099127775815992,
+      "precision_at_top_20_percent": 0.7381228273464658,
+      "precision_at_0_5_threshold": 0.6578743211792087,
+      "recall_at_0_5_threshold": 0.7977422389463782,
+      "f1_at_0_5_threshold": 0.7210884353741497,
+      "confusion_matrix_labels_0_1": [
+        [
+          1305,
+          882
+        ],
+        [
+          430,
+          1696
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.7521613832853026,
+          "recall": 0.5967078189300411,
+          "f1-score": 0.6654767975522693,
+          "support": 2187.0
+        },
+        "1": {
+          "precision": 0.6578743211792087,
+          "recall": 0.7977422389463782,
+          "f1-score": 0.7210884353741497,
+          "support": 2126.0
+        },
+        "accuracy": 0.6958033851147694,
+        "macro avg": {
+          "precision": 0.7050178522322557,
+          "recall": 0.6972250289382096,
+          "f1-score": 0.6932826164632095,
+          "support": 4313.0
+        },
+        "weighted avg": {
+          "precision": 0.7056846167567713,
+          "recall": 0.6958033851147694,
+          "f1-score": 0.6928893507656516,
+          "support": 4313.0
+        }
+      }
+    },
+    "feature_importance": {
+      "uniquePurchaseDays": 0.37716910243034363,
+      "frequency": 0.262259304523468,
+      "quantityTotal": 0.10111813992261887,
+      "recencyDays": 0.07216114550828934,
+      "monetaryTotal": 0.05217774584889412,
+      "purchaseSpanDays": 0.05037190020084381,
+      "transactionRows": 0.024920472875237465,
+      "averageQuantity": 0.020556969568133354,
+      "averageOrderValue": 0.020471524447202682,
+      "averageUnitPrice": 0.018793677911162376
+    }
+  },
+  "cross_sheet_filtered": {
+    "experiment": "exclude_cross_sheet_duplicate_copies",
+    "train_snapshot_rows": 8636,
+    "test_customers": 4313,
+    "training_cutoffs": [
+      "2011-03-14",
+      "2011-06-12"
+    ],
+    "test_cutoff": "2011-09-10",
+    "test_label_window_end": "2011-12-09",
+    "train_churn_rate": 0.6337424733672997,
+    "test_metrics": {
+      "customers": 4313,
+      "churn_rate": 0.4929283561326223,
+      "roc_auc": 0.763630423682919,
+      "average_precision": 0.7099457299397731,
+      "precision_at_top_20_percent": 0.7334878331402086,
+      "precision_at_0_5_threshold": 0.6571648690292758,
+      "recall_at_0_5_threshold": 0.8024459078080903,
+      "f1_at_0_5_threshold": 0.722575180008471,
+      "confusion_matrix_labels_0_1": [
+        [
+          1297,
+          890
+        ],
+        [
+          420,
+          1706
+        ]
+      ],
+      "classification_report": {
+        "0": {
+          "precision": 0.755387303436226,
+          "recall": 0.5930498399634202,
+          "f1-score": 0.6644467213114754,
+          "support": 2187.0
+        },
+        "1": {
+          "precision": 0.6571648690292758,
+          "recall": 0.8024459078080903,
+          "f1-score": 0.722575180008471,
+          "support": 2126.0
+        },
+        "accuracy": 0.6962670994667285,
+        "macro avg": {
+          "precision": 0.7062760862327508,
+          "recall": 0.6977478738857552,
+          "f1-score": 0.6935109506599733,
+          "support": 4313.0
+        },
+        "weighted avg": {
+          "precision": 0.7069706803086636,
+          "recall": 0.6962670994667285,
+          "f1-score": 0.6930998869015085,
+          "support": 4313.0
+        }
+      }
+    },
+    "feature_importance": {
+      "uniquePurchaseDays": 0.3938354253768921,
+      "frequency": 0.25617069005966187,
+      "quantityTotal": 0.10393224656581879,
+      "recencyDays": 0.07392630726099014,
+      "purchaseSpanDays": 0.049627359956502914,
+      "monetaryTotal": 0.03891385719180107,
+      "transactionRows": 0.024648480117321014,
+      "averageOrderValue": 0.020325422286987305,
+      "averageQuantity": 0.01983039267361164,
+      "averageUnitPrice": 0.018789833411574364
+    }
+  }
+}

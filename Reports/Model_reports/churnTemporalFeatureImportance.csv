@@ -1,0 +1,11 @@
+feature,importance
+uniquePurchaseDays,0.3771691
+frequency,0.2622593
+quantityTotal,0.10111814
+recencyDays,0.072161146
+monetaryTotal,0.052177746
+purchaseSpanDays,0.0503719
+transactionRows,0.024920473
+averageQuantity,0.02055697
+averageOrderValue,0.020471524
+averageUnitPrice,0.018793678
