@@ -1,0 +1,36 @@
+{
+  "modelName": "churnBaseline",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.772282+00:00",
+  "artifacts": [
+    {
+      "file": "churnXgboostModel.json",
+      "source": "models\\churnXgboostModel.json",
+      "sha256": "0f18c377cb1acd485f88d5e2516504b3b916700d4d9eadbb8c16b2ea2c41ad6a",
+      "sizeBytes": 754699,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnModelMetadata.joblib",
+      "source": "models\\churnModelMetadata.joblib",
+      "sha256": "6c466c9552331751c536ac66599726071f01bec50fd4e7568610d1fef63f8a48",
+      "sizeBytes": 264,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnModelMetrics.json",
+      "source": "reports\\modelReports\\churnModelMetrics.json",
+      "sha256": "7fb5333e7e12e13b9307a573d5cd247715d0db0a7e2376ae01bda65fd0a23ecd",
+      "sizeBytes": 1279,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnModelReport.txt",
+      "source": "reports\\modelReports\\churnModelReport.txt",
+      "sha256": "96b68e602dd7b70d2f56917349201d9b1a7c34819e4e41a0b9e556b816eea2c2",
+      "sizeBytes": 1300,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}
