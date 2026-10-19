@@ -1,0 +1,65 @@
+{
+  "project": "RetailPulse",
+  "registryType": "local-file-based",
+  "createdAtUtc": "2026-10-18T17:40:10.549311+00:00",
+  "pythonVersion": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "versions": [
+    {
+      "modelName": "prophetBaseline",
+      "version": "v1",
+      "manifest": "models\\registry\\prophetBaseline\\v1\\manifest.json",
+      "artifactCount": 3
+    },
+    {
+      "modelName": "lstmBaseline",
+      "version": "v1",
+      "manifest": "models\\registry\\lstmBaseline\\v1\\manifest.json",
+      "artifactCount": 3
+    },
+    {
+      "modelName": "forecastEnsemble",
+      "version": "v1",
+      "manifest": "models\\registry\\forecastEnsemble\\v1\\manifest.json",
+      "artifactCount": 2
+    },
+    {
+      "modelName": "churnBaseline",
+      "version": "v1",
+      "manifest": "models\\registry\\churnBaseline\\v1\\manifest.json",
+      "artifactCount": 4
+    },
+    {
+      "modelName": "churnTemporal",
+      "version": "v1",
+      "manifest": "models\\registry\\churnTemporal\\v1\\manifest.json",
+      "artifactCount": 3
+    },
+    {
+      "modelName": "churnOptuna",
+      "version": "v1",
+      "manifest": "models\\registry\\churnOptuna\\v1\\manifest.json",
+      "artifactCount": 2
+    },
+    {
+      "modelName": "prophetBaseline",
+      "version": "v2",
+      "manifest": "models\\registry\\prophetBaseline\\v2\\manifest.json",
+      "artifactCount": 6
+    },
+    {
+      "modelName": "forecastEnsemble",
+      "version": "v2",
+      "manifest": "models\\registry\\forecastEnsemble\\v2\\manifest.json",
+      "artifactCount": 5
+    },
+    {
+      "modelName": "churnOptuna",
+      "version": "v2",
+      "manifest": "models\\registry\\churnOptuna\\v2\\manifest.json",
+      "artifactCount": 4
+    }
+  ],
+  "missingArtifacts": [],
+  "updatedAtUtc": "2026-10-18T18:01:50.654455+00:00"
+}
