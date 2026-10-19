@@ -1,0 +1,45 @@
+{
+  "modelName": "forecastEnsemble",
+  "version": "v2",
+  "registeredAtUtc": "2026-10-18T17:47:57.624431+00:00",
+  "pythonVersion": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "artifacts": [
+    {
+      "file": "forecastEnsembleMetrics.json",
+      "source": "reports\\modelReports\\forecastEnsembleMetrics.json",
+      "sha256": "ebc7430cfbe566f919ada5c43d1ef8d0395c798f43d19b67ecaf7f84fd42ed5f",
+      "sizeBytes": 985,
+      "verifiedCopy": true
+    },
+    {
+      "file": "forecastEnsembleReport.txt",
+      "source": "reports\\modelReports\\forecastEnsembleReport.txt",
+      "sha256": "6ed1716c12803c1d0cb78b71fd4f47248466459c2e6229df01f53b679774560b",
+      "sizeBytes": 1561,
+      "verifiedCopy": true
+    },
+    {
+      "file": "forecastModelComparison.csv",
+      "source": "reports\\modelReports\\forecastModelComparison.csv",
+      "sha256": "92fe226100afc1d8aa6e5e3f6a6ed4ae433ab943e61838fd27adc8ab8a7be393",
+      "sizeBytes": 367,
+      "verifiedCopy": true
+    },
+    {
+      "file": "ensembleHoldoutForecast.csv",
+      "source": "data\\processedData\\ensembleHoldoutForecast.csv",
+      "sha256": "e81204c1178c48c1782a6bcb682f74b3f96b4336b60098d55b48f613a3a8438b",
+      "sizeBytes": 2340,
+      "verifiedCopy": true
+    },
+    {
+      "file": "forecastModelComparison.png",
+      "source": "reports\\figures\\forecastModelComparison.png",
+      "sha256": "01cc1a5a4f8b66c57b76a56a4222e43089d0c2eed3058a7328f3991b82dea27a",
+      "sizeBytes": 154023,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Refreshed local artifact snapshot with verified hashes; not a claim of production validation."
+}

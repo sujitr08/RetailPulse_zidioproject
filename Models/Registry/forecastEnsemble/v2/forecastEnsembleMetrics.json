@@ -1,0 +1,34 @@
+{
+  "prophetWeight": 0.5,
+  "lstmWeight": 0.5,
+  "holdoutDays": 30,
+  "holdoutStart": "2011-11-10",
+  "holdoutEnd": "2011-12-09",
+  "metrics": {
+    "Prophet": {
+      "mae": 20906.799337716842,
+      "rmse": 35770.989813506945,
+      "mapeNonZeroDaysPercent": 27.500285647689203,
+      "wapePercent": 37.023526639099856,
+      "evaluatedDays": 30,
+      "nonZeroActualDays": 26
+    },
+    "LSTM": {
+      "mae": 36949.81825246734,
+      "rmse": 48005.31054138705,
+      "mapeNonZeroDaysPercent": 51.832540259975936,
+      "wapePercent": 65.43385997454733,
+      "evaluatedDays": 30,
+      "nonZeroActualDays": 26
+    },
+    "Prophet-LSTM 50:50 Ensemble": {
+      "mae": 28902.860391661896,
+      "rmse": 41373.56143338266,
+      "mapeNonZeroDaysPercent": 39.60900235757574,
+      "wapePercent": 51.18362712394687,
+      "evaluatedDays": 30,
+      "nonZeroActualDays": 26
+    }
+  },
+  "selectionMethod": "Fixed equal weights; no holdout-based tuning"
+}
