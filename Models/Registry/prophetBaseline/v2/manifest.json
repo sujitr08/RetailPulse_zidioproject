@@ -1,0 +1,52 @@
+{
+  "modelName": "prophetBaseline",
+  "version": "v2",
+  "registeredAtUtc": "2026-10-18T17:47:57.415860+00:00",
+  "pythonVersion": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "artifacts": [
+    {
+      "file": "prophetBaselineModel.json",
+      "source": "reports\\modelReports\\prophetBaselineModel.json",
+      "sha256": "01a1fcf43781324de07b84d1d8d0e40e60287744f3cec624b2efb8713651d6f7",
+      "sizeBytes": 111555,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetBaselineMetrics.json",
+      "source": "reports\\modelReports\\prophetBaselineMetrics.json",
+      "sha256": "9e412d1d3bc132073bd227f242836b1d0197410dd9834c2e7e546fcb477edb9b",
+      "sizeBytes": 498,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetBaselineReport.txt",
+      "source": "reports\\modelReports\\prophetBaselineReport.txt",
+      "sha256": "2935d4b799814d5db88e7e1f1570b20a319aa953ebdab91ec137c07ade5cdadf",
+      "sizeBytes": 2147,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetHoldoutForecast.csv",
+      "source": "data\\processedData\\prophetHoldoutForecast.csv",
+      "sha256": "a06dd0f2129f69c09c6c92fea83fa5a479092e5a3c14983452a5aca3669ba246",
+      "sizeBytes": 2892,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetHoldoutForecast.png",
+      "source": "reports\\figures\\prophetHoldoutForecast.png",
+      "sha256": "89385620c0305fb710e3c00bd462d5ed2664ecbc5194f2fdaa3b84fac5bdc35c",
+      "sizeBytes": 161618,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetForecastComponents.png",
+      "source": "reports\\figures\\prophetForecastComponents.png",
+      "sha256": "ab5fcbbc85920df1ba781854b27f0ef810e033482a1d677f481473ac654c7edc",
+      "sizeBytes": 110428,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Refreshed local artifact snapshot with verified hashes; not a claim of production validation."
+}

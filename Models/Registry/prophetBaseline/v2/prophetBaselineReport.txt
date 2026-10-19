@@ -1,0 +1,43 @@
+RETAILPULSE - PROPHET BASELINE EVALUATION
+=======================================================
+Evaluation method: chronological holdout
+Training observations: 709
+Training period: 2009-12-01 to 2011-11-09
+Holdout observations: 30
+Holdout period: 2011-11-10 to 2011-12-09
+
+METRICS
+-------------------------------------------------------
+MAE: 20906.7993
+RMSE: 35770.9898
+MAPE on non-zero actual days: 27.5003%
+WAPE: 37.0235%
+Holdout days evaluated: 30
+Holdout days with non-zero actual sales: 26
+
+MODEL SETTINGS
+-------------------------------------------------------
+Yearly seasonality: enabled
+Weekly seasonality: enabled
+Daily seasonality: disabled
+Seasonality mode: additive
+Changepoint prior scale: 0.05
+Prediction interval width: 95%
+Negative predictions clipped to zero for reported evaluation metrics.
+
+INTERPRETATION AND LIMITATIONS
+-------------------------------------------------------
+MAPE is calculated only on days with non-zero actual sales; it is not directly comparable to MAPE calculated on all days.
+WAPE is calculated over all holdout days.
+Only the final 30 observed calendar days are held out. This is a single holdout and does not establish performance across multiple seasons.
+The dataset ends in December 2011; this is a historical evaluation, not a current real-world forecast.
+The target is eligible positive sales, not net sales after returns.
+The 12% MAPE acceptance target is not considered met unless the reported result supports it under the project's agreed metric definition.
+
+OUTPUTS
+-------------------------------------------------------
+Holdout forecast: C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\prophetHoldoutForecast.csv
+Metrics JSON: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\prophetBaselineMetrics.json
+Model JSON: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\prophetBaselineModel.json
+Forecast plot: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\prophetHoldoutForecast.png
+Components plot: C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\prophetForecastComponents.png
