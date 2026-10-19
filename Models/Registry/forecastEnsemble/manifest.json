@@ -1,0 +1,22 @@
+{
+  "modelName": "forecastEnsemble",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.734277+00:00",
+  "artifacts": [
+    {
+      "file": "forecastEnsembleMetrics.json",
+      "source": "reports\\modelReports\\forecastEnsembleMetrics.json",
+      "sha256": "ebc7430cfbe566f919ada5c43d1ef8d0395c798f43d19b67ecaf7f84fd42ed5f",
+      "sizeBytes": 985,
+      "verifiedCopy": true
+    },
+    {
+      "file": "forecastEnsembleReport.txt",
+      "source": "reports\\modelReports\\forecastEnsembleReport.txt",
+      "sha256": "6ed1716c12803c1d0cb78b71fd4f47248466459c2e6229df01f53b679774560b",
+      "sizeBytes": 1561,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}

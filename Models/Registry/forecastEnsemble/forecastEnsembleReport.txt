@@ -1,0 +1,42 @@
+RETAILPULSE - FORECAST ENSEMBLE EVALUATION
+=======================================================
+Holdout period: 2011-11-10 to 2011-12-09
+Holdout days: 30
+Ensemble weights: Prophet=0.50, LSTM=0.50
+Weights were fixed in advance; they were not selected using holdout metrics.
+
+MODEL COMPARISON
+-------------------------------------------------------
+Prophet
+  MAE: 20906.7993
+  RMSE: 35770.9898
+  MAPE on non-zero actual days: 27.5003%
+  WAPE: 37.0235%
+
+LSTM
+  MAE: 36949.8183
+  RMSE: 48005.3105
+  MAPE on non-zero actual days: 51.8325%
+  WAPE: 65.4339%
+
+Prophet-LSTM 50:50 Ensemble
+  MAE: 28902.8604
+  RMSE: 41373.5614
+  MAPE on non-zero actual days: 39.6090%
+  WAPE: 51.1836%
+
+Lowest holdout WAPE: Prophet
+
+LIMITATIONS
+-------------------------------------------------------
+This is a single historical holdout and does not establish performance across multiple seasons.
+The equal-weight ensemble may perform worse than either individual model.
+The target is eligible positive sales, not net sales after returns.
+The 12% MAPE target must be assessed using the agreed metric definition.
+
+OUTPUTS
+-------------------------------------------------------
+C:\Users\sidha\OneDrive\Desktop\retailPulse\data\processedData\ensembleHoldoutForecast.csv
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\forecastModelComparison.csv
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\modelReports\forecastEnsembleMetrics.json
+C:\Users\sidha\OneDrive\Desktop\retailPulse\reports\figures\forecastModelComparison.png
