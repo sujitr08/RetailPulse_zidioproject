@@ -1,0 +1,29 @@
+{
+  "modelName": "churnTemporal",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.798280+00:00",
+  "artifacts": [
+    {
+      "file": "churnXgboostTemporalModel.json",
+      "source": "models\\churnXgboostTemporalModel.json",
+      "sha256": "544c3d8840e045623ce5f4ae9772cf4f5f43ccc7b967444aadfde68643096329",
+      "sizeBytes": 519069,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnTemporalModelMetadata.joblib",
+      "source": "models\\churnTemporalModelMetadata.joblib",
+      "sha256": "f5ee40fda045a0494b83c621f415ba48110781de2aa4505d55dedf2f1c2b7bad",
+      "sizeBytes": 288,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnTemporalValidationMetrics.json",
+      "source": "reports\\modelReports\\churnTemporalValidationMetrics.json",
+      "sha256": "31cf2b6f498a52bd83a87f477c3552ab8246785b55d88657b0e2c874421e3312",
+      "sizeBytes": 2141,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}

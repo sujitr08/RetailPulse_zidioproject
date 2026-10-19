@@ -1,0 +1,57 @@
+{
+  "model": "XGBoostClassifier_temporal_validation",
+  "label_definition": "No qualifying purchase during the 90 days after each cutoff",
+  "feature_window_days": 365,
+  "label_window_days": 90,
+  "dataset_max_qualifying_purchase_date": "2011-12-09",
+  "training_cutoffs": [
+    "2011-03-14",
+    "2011-06-12"
+  ],
+  "test_cutoff": "2011-09-10",
+  "test_label_window_end": "2011-12-09",
+  "train_snapshot_rows": 8636,
+  "test_customers": 4313,
+  "train_snapshot_churn_rate": 0.6337424733672997,
+  "test_churn_rate": 0.4929283561326223,
+  "temporal_test_metrics": {
+    "customers": 4313,
+    "churn_rate": 0.4929283561326223,
+    "roc_auc": 0.7632644752344415,
+    "average_precision": 0.7099127775815992,
+    "precision_at_top_20_percent": 0.7381228273464658,
+    "precision_at_0_5_threshold": 0.6578743211792087,
+    "recall_at_0_5_threshold": 0.7977422389463782,
+    "f1_at_0_5_threshold": 0.7210884353741497,
+    "confusion_matrix_labels_0_1": [
+      [
+        1305,
+        882
+      ],
+      [
+        430,
+        1696
+      ]
+    ]
+  },
+  "feature_columns": [
+    "frequency",
+    "quantityTotal",
+    "monetaryTotal",
+    "averageOrderValue",
+    "averageUnitPrice",
+    "transactionRows",
+    "recencyDays",
+    "uniquePurchaseDays",
+    "averageQuantity",
+    "purchaseSpanDays"
+  ],
+  "validation_method": "Train on two earlier point-in-time customer snapshots and test on the latest snapshot. Earlier label windows end before the final test cutoff. Customers may recur across snapshots; this is point-in-time temporal validation, not a fully customer-disjoint test.",
+  "caveats": [
+    "A temporal split is more realistic than a random split, but only one final cutoff is tested.",
+    "Customers may occur in multiple snapshots; interpret this as repeated point-in-time scoring.",
+    "The dataset is historical and ends in 2011; results may not generalize to current retail behavior.",
+    "ROC-AUC and precision targets are goals, not guaranteed outcomes.",
+    "Unit cost and inventory fields are not used because source values are unavailable or unverified."
+  ]
+}
