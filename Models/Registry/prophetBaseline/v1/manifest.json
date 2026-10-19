@@ -1,0 +1,29 @@
+{
+  "modelName": "prophetBaseline",
+  "version": "v1",
+  "registeredAtUtc": "2026-10-18T17:40:10.694281+00:00",
+  "artifacts": [
+    {
+      "file": "prophetBaselineModel.json",
+      "source": "reports\\modelReports\\prophetBaselineModel.json",
+      "sha256": "01a1fcf43781324de07b84d1d8d0e40e60287744f3cec624b2efb8713651d6f7",
+      "sizeBytes": 111555,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetBaselineMetrics.json",
+      "source": "reports\\modelReports\\prophetBaselineMetrics.json",
+      "sha256": "9e412d1d3bc132073bd227f242836b1d0197410dd9834c2e7e546fcb477edb9b",
+      "sizeBytes": 498,
+      "verifiedCopy": true
+    },
+    {
+      "file": "prophetBaselineReport.txt",
+      "source": "reports\\modelReports\\prophetBaselineReport.txt",
+      "sha256": "2935d4b799814d5db88e7e1f1570b20a319aa953ebdab91ec137c07ade5cdadf",
+      "sizeBytes": 2147,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Existing artifact snapshot; not a claim of production validation."
+}
