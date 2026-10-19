@@ -104,10 +104,6 @@ A public deployment must be independently verified before a live URL is listed h
 
 ## Author and Project Details
 
-- Author: [Add your name]
+- Author: Sujit Rajan
 - Program: ZIDIO Data Science & Analytics
-- Project: RetailPulse
-- Repository: [Add the GitHub repository URL]
-- Live demo: [Add the verified HTTPS URL]
-- Report: [Add the final PDF path or link]
-- Demo video: [Add the video URL after recording]
+- Project: RetailPulse_zidioproject
