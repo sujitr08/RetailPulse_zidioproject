@@ -1,0 +1,38 @@
+{
+  "modelName": "churnOptuna",
+  "version": "v2",
+  "registeredAtUtc": "2026-10-18T18:01:50.597454+00:00",
+  "pythonVersion": "3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "artifacts": [
+    {
+      "file": "churnXgboostOptuna.json",
+      "source": "models\\churnXgboostOptuna.json",
+      "sha256": "4285e0d2d2627acecf26561ac0e33308eb5981a83f201b07d188482086f1bf31",
+      "sizeBytes": 223247,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnOptunaBestParameters.json",
+      "source": "reports\\modelReports\\churnOptunaBestParameters.json",
+      "sha256": "22b08b3d7c0f20949c201258ebb7d174dcda6bfecb95b8ab0a6956ec664b2fe8",
+      "sizeBytes": 1489,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnOptunaTuningReport.txt",
+      "source": "reports\\modelReports\\churnOptunaTuningReport.txt",
+      "sha256": "0b7d6aa5225a8e99f0b25ebde1c0c0d5ed1a1b77e25e96f032ebc6a17e5dcc69",
+      "sizeBytes": 923,
+      "verifiedCopy": true
+    },
+    {
+      "file": "churnOptunaModelMetadata.joblib",
+      "source": "generated from churnOptunaBestParameters.json",
+      "sha256": "a45e8a2268b2d6b90cfafc8efd3be2ab88f4b556499319a291830ed59694f67c",
+      "sizeBytes": 727,
+      "verifiedCopy": true
+    }
+  ],
+  "notes": "Optuna model snapshot with metadata derived from the saved tuning payload. Validation metrics are offline results, not a claim of production performance."
+}
